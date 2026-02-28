@@ -28,7 +28,7 @@ const image = document.getElementById("img_boxm");
 image.addEventListener("click", () => { image.src = "images/moon.jpg"; });
 
 // ----------------------------------------------------------------------------------
-// --- Store / Retrive data from/to the local storage
+// --- Store / Retrieve data from/to the local storage
 
 let last_visit = localStorage.getItem("last visit");
 let nb_visits = localStorage.getItem("nb visits");
@@ -47,7 +47,7 @@ if (!last_visit) {
 document.getElementById("last_visit").textContent = last_visit;
 
 localStorage.setItem("nb visits",nb_visits);
-localStorage.setItem("last visit",new Date().toISOString());
+localStorage.setItem("last visit",dayjs(new Date()).format('YYYYMMDD HHmmss'));
 
 // ----------------------------------------------------------------------------------
 // ----------------------------------------------------------------------------------

@@ -1,11 +1,11 @@
 html {
-    background-color: rgb(250, 240, 229);
+    background-color: rgb(248, 184, 117);
 }
 body {
     font-family: Verdana;
     max-width: 900px;
     margin: 0 auto;
-    background-color: #fae6ca;
+    background-color: white;
     padding-bottom: 20px;  
 }
 h1, h2, h3 {
@@ -45,20 +45,16 @@ hr {
     margin-right: 12px;
 }
 code {
-  font-family: "Courier New", Courier, monospace;
   font-size: 0.95em;
-  padding: 2px 4px;
-  border-radius: 4px;
 }
-.tag {
-  font-weight: bold;
-  color: #1e5bb8;       /* blue-ish for HTML tags */
-  background-color: #dece8e;
-}
-.attr {
-  font-weight: bold;
-  color: #0b6e99;       /* slightly different blue for attributes */
-  background-color: #dece8e;
+
+code, .option {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: antiquewhite;
+    color: navy;
+    border-radius: 3px;
+    border: 1px #0b6e99 solid;
+    padding: 0 3px;
 }
 .p_html {
   line-height: 1.6;
@@ -67,6 +63,9 @@ code {
 .float_img,
 .div_links {
     margin-left: 10px;
+}
+.div_links {
+    line-height: 1.5;
 }
 .note {
   border-left: 4px solid #de9b1f; 
@@ -77,6 +76,9 @@ code {
 }
 .note strong {
   color: #ab7002;
+}
+.big_emo {
+    font-size: 30px;
 }
 #img_css_stx {
     width: 300px;
