@@ -5,16 +5,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MDN - HTML tutorial</title>
-  <!-- link rel="stylesheet" href="Styles/main.css"-->
-  <!--script async src="Scripts/main.js"></script-->
   <link rel="stylesheet" href="styles/style.css">
+  <script src="scripts/main.js" defer></script>
 
   <!--Font - Poiret One-->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
+
+  <!--dayjs library-->
   <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
-  <script src="scripts/main.js" defer></script>
 </head>
 
 <body>
@@ -25,38 +25,58 @@
   <h2>Links</h2>
   <div class="div_links">
     <a href="https://developer.mozilla.org/en-US/" target="_blank">MDN - Homepage</a><br>
-    <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development" target="_blank">MDN - WEB development</a><br>
+    <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development" target="_blank">MDN - WEB
+      development</a><br>
     <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Environment_setup/Installing_software#installing_a_local_web_server"
       target="_blank">
-      Need of a local WEB server ? Have a look here.</a><br><br>
+      Need of a local WEB server ? Have a look here.</a><br>
+      <a href="https://github.com/" target="_blank">GitHub</a><br>
+    <a href="https://validator.w3.org/" target="_blank">W3C Markup Validation Service</a><br><br>
   </div>
-<!--##########################################################################################################################################################-->
-  <p><strong>Tutorial:</strong> Continue 
-    <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Web_standards/How_the_web_works"
-    target="_blank">here</a>
-    <span> - How the web works</span>
+  <!--#######################################################################################################-->
+  <p><strong>Tutorial: ⏭</strong></p>
+  <div class="p_subp">
+    <p>
+      HTML - Continue
+      <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Basic_HTML_syntax#character_references_including_special_characters_in_html"
+        target="_blank">here</a>
+      <span> with "Character references: including special characters in HTML"</span>
+    </p>
+    <p>
+      CSS - Continue
+      <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics"
+        target="_blank">here</a>
+      <span> with CSS styling basics"</span>
+    </p>
+  </div>
+  <br>
+  <p>Playground: Click
+    <a href="playground.html" target="_blank">here</a>
   </p>
-<!--##########################################################################################################################################################-->
-  <!--======================================================================================================-->
+  <!--#######################################################################################################-->
+  <!--=======================================================================================================-->
   <h2>Table of contents</h2>
   <div class="div_links">
     <a href="#p_add_img">Add an image</a><br>
     <a href="#p_lists">Lists</a><br>
     <a href="#p_css">About CSS</a><br>
     <a href="#p_js">Javascipt - For adding interactivity to your pages</a><br>
-    <a href="#p_publish">Publish a site for free via Github Pages</a>
+    <a href="#p_publish">Publish a site for free via Github Pages</a><br>
+    <a href="#p_mathml">Mathematical Markup Language</a><br>
+    <a href="#p_version">Version Control</a>
+
     <!--
       <a href="#"></a><br>
       <a href="#"></a><br>
       <a href="#"></a><br>
       -->
   </div>
-  <!--======================================================================================================-->
+  <!--=======================================================================================================-->
   <h2 id="p_add_img">Add an image</h2>
   <img src="images/test.jpg" alt="Test image" class="float_img">
-  <!--======================================================================================================-->
+  <!--=======================================================================================================-->
   <h2 id="p_lists">Lists</h2>
-  <!---------------------------------------------------------------------------------------------------------->
+  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
   <h3>Ordered lists</h3>
   <p>The list below is ordered (numbered)</p>
   <ol>
@@ -64,7 +84,7 @@
     <li>Drink</li>
     <li>Sleep</li>
   </ol>
-  <!---------------------------------------------------------------------------------------------------------->
+  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
   <h3>Unordered lists</h3>
   <p>Example of an unordered list (bulleted)</p>
   <ul>
@@ -72,7 +92,7 @@
     <li>Fromage</li>
     <li>Lait</li>
   </ul>
-  <!---------------------------------------------------------------------------------------------------------->
+  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
   <h3>Mixed lists</h3>
   <p>This list has both ordered and unordered items</p>
   <ul>
@@ -94,11 +114,11 @@
   <!--======================================================================================================-->
   <h2 id="p_css">About CSS</h2>
   <p>CSS is a style sheet language. It allows you to change the aspect of HTML elements.</p>
-  <!---------------------------------------------------------------------------------------------------------->
+  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
   <h3>Syntax</h3>
   <img src="images/css-syntax.jpg" alt="CSS Syntax" class="float_img" id="img_css_stx">
   <p>The whole structure is called a <strong>ruleset</strong> (or rule).</p>
-  <!---------------------------------------------------------------------------------------------------------->
+  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
   <h3>The box model</h3>
   <p>Most HTML elements can be thought of as boxes.</p>
   <img src="images/box-model.jpg" alt="The box model" class="float_img" id="img_boxm">
@@ -107,19 +127,19 @@
   <p>JavaScript is the programming language that adds interactivity and dynamic behavior to an HTML document,
     transforming
     a static page into a responsive user experience.</p>
-  <!---------------------------------------------------------------------------------------------------------->
+  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
   <h3>What is JavaScript used for ?</h3>
-  <p>While HTML defines the structure and CSS handles the styling, JavaScript provides the "brain" by allowing the page
-    to:
-  <ul>
-    <li>Respond to user actions like clicks, scrolls, and typing.</li>
-    <li>Update content in real-time without reloading the entire page.</li>
-    <li>Manipulate elements directly through the Document Object Model (DOM).</li>
-  </ul>
+  <p>While HTML defines the structure and CSS handles the styling, JavaScript provides the "brain" by allowing
+    the page to:
   </p>
-  <!---------------------------------------------------------------------------------------------------------->
+    <ul>
+      <li>Respond to user actions like clicks, scrolls, and typing.</li>
+      <li>Update content in real-time without reloading the entire page.</li>
+      <li>Manipulate elements directly through the Document Object Model (DOM).</li>
+    </ul>
+  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
   <h3>Linking</h3>
-  <p class="p_html">
+  <p>
     A modern way of linking an external JavaScript file is to place the
     <code>&lt;script&gt;</code> element in the
     <code>&lt;head&gt;</code> section and use the
@@ -127,7 +147,7 @@
     <code>async</code> attribute to prevent blocking HTML parsing.
   </p>
 
-  <p class="p_html">
+  <p>
     Use <code>defer</code> for scripts that depend on the DOM or when execution order matters.
     Use <code>async</code> otherwise (for independent scripts).
   </p>
@@ -168,8 +188,8 @@
         <li>Click on <span class="option">Add file</span></li>
         <li>→ Upload files</li>
         <li>Add all the files<br><span class="note">
-          <strong>Note:</strong> One way is to have the files dropped all at once from the explorer
-        </span> </li>
+            <strong>Note:</strong> One way is to have the files dropped all at once from the explorer
+          </span> </li>
         <li>Commit changes</li>
       </ul>
       <span class="note"><strong>⚠️ Important:</strong> The main access file must be named 'index.html'.</span>
@@ -182,16 +202,46 @@
         <li>Branch = main</li>
         <li>Save.</li>
       </ul>
-      <table style="vertical-align: middle;"><td style="font-size: 30px;">⏳</td><td>Wait for one or two minutes</td></table>
+      <table style="vertical-align: middle;">
+        <tr>
+          <td class="big_emo">⏳</td>
+          <td>Wait for one or two minutes</td>
+        </tr>
+      </table>
       <p>A new URL appears in the page</p>
     </li>
     <li>Test on remote device
-<ul>
-  <li>Open the URL on the remote device</li>
-  <li>There we are. When uploading new files, after committing, the site updates automatically.</li>
-</ul>
+      <ul>
+        <li>Open the URL on the remote device</li>
+        <li>There we are. When uploading new files, after committing, the site updates automatically.</li>
+      </ul>
     </li>
-  </ul>
+  </ol>
+  <!--======================================================================================================-->
+  <h2 id="p_mathml">Mathematical Markup Language</h2>
+  <p>Use <strong>MathML</strong> (Mathematical Markup Language) to use mathematical notation.</p>
+  <p>
+    The fraction
+    <math>
+      <mfrac>
+        <mn>1</mn>
+        <mn>3</mn>
+      </mfrac>
+    </math>
+    is not a decimal number.
+  </p>
+  <br>
+  <p>For more information, see
+    <a href="https://developer.mozilla.org/en-US/docs/Web/MathML" target="_blank">
+      here</a> on MDN.
+  </p>
+  <!--======================================================================================================-->
+  <h2 id="p_version">Version Control</h2>
+  <p>Information about <strong>version control</strong> using Git and GitHub is available
+    <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Version_control" target="_blank">
+      here</a> on MDN.
+  </p>
+  <!--======================================================================================================-->
 </body>
 
 </html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tutorial - Playground</title>
+  <link rel="stylesheet" href="styles/style.css">
+
+  <!--Font - Poiret One-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
+
+  <style>
+    tr td:first-child {
+        padding-right: 15px;
+    }
+  </style>
+</head>
+<body>
+    <h1>Playground</h1>
+    <h2>label and input</h2>
+    <table>
+        <tr>
+            <td>
+                <label for="first-input">Input is disabled</label>
+            </td>
+            <td>
+                <input id="first-input" type="text" disabled/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="second-input">This input is enabled</label>
+            </td>
+            <td>
+                <input id="second-input" type="text"/>
+            </td>
+        </tr>
+    </table>
+    <table style="margin-left: 15px;">
+        <tr>
+            <td style="font-size: 36px;">⚠️</td>
+            <td>
+                <p>
+                    The two labels and inputs have been put in a table to neatly align.<br>
+                    Notice the margin at the right of the first column. This effect is made possible by use of
+                    <code style="white-space: pre;">padding-right</code>
+                    property. Indeed, the margin property is explicitly ignored by browsers for internal table elements such
+                    as rows (
+                    <code>&lt;tr&gt;</code>
+                    ), columns (
+                    <code>&lt;col&gt;</code>
+                    ), and cells (
+                    <code>&lt;td&gt;</code>
+                    and <code>&lt;th&gt;</code>
+                    ).
+                </p>
+    
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
