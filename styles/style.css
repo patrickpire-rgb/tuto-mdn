@@ -35,14 +35,8 @@ h3 {
     text-shadow: 1px 1px 3px gray;
     margin-left: 5px;
 }
-p {
-    margin-left: 10px;
-}
 li {
     line-height: 1.5;
-}
-hr {
-    margin-right: 12px;
 }
 code {
   font-size: 0.95em;
@@ -56,10 +50,7 @@ code, .option {
     border: 1px #0b6e99 solid;
     padding: 0 3px;
 }
-.p_html {
-  line-height: 1.6;
-  margin-bottom: 1em;
-}
+p,
 .float_img,
 .div_links {
     margin-left: 10px;
@@ -78,17 +69,24 @@ code, .option {
   color: #ab7002;
 }
 .big_emo {
-    font-size: 30px;
+    font-size: 24px;
+}
+.p_subp {
+    margin-left: 15px;
+}
+.p_subp p { /* reduce vertical margins to 5 instead of 16 */
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 #img_css_stx {
     width: 300px;
     height: auto;
-    border: 3px solid rgb(251, 171, 43);
+    border: 3px solid rgb(105, 105, 206);
 }
 #img_boxm {
     display: block;
     margin: 0 auto;
-    max-width: 95%;
+    max-width: 85%;
     height: auto;
 }
 .done {
