@@ -35,6 +35,10 @@ h3 {
     text-shadow: 1px 1px 3px gray;
     margin-left: 5px;
 }
+h1 + div {
+    font-size: 125%;
+    color: rgb(183, 34, 34);
+}
 li {
     line-height: 1.5;
 }
@@ -51,9 +55,14 @@ code, .option {
     padding: 0 3px;
 }
 p,
+dl,
 .float_img,
-.div_links {
+.div_links,
+#tab_char_ref {
     margin-left: 10px;
+}
+dt {
+    font-weight: bold;
 }
 .div_links {
     line-height: 1.5;
@@ -88,6 +97,20 @@ p,
     margin: 0 auto;
     max-width: 85%;
     height: auto;
+}
+#tab_char_ref {
+    border-collapse: collapse;
+    width: auto;
+}
+#tab_char_ref th {
+    background-color: #faf6e0;
+} 
+#tab_char_ref th, #tab_char_ref td{
+    border: 1px solid gray;
+    padding: 8px 20px;
+}
+#tab_char_ref tr:nth-child(even) {
+    background-color: rgb(245, 245, 245);
 }
 .done {
   color: darkseagreen;

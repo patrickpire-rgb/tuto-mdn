@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MDN - HTML tutorial</title>
   <link rel="stylesheet" href="styles/style.css">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+
   <script src="scripts/main.js" defer></script>
 
   <!--Font - Poiret One-->
@@ -19,8 +21,10 @@
 
 <body>
   <h1>MDN - HTML tutorial</h1>
-  <p>Last visit: <span id="last_visit"></span></p>
-  <p>nb of visits: <span id="nb_visits"></span></p>
+  <div>
+    <p>Last visit: <span id="last_visit"></span></p>
+    <p>nb of visits: <span id="nb_visits"></span></p>
+  </div>
 
   <h2>Links</h2>
   <div class="div_links">
@@ -38,15 +42,15 @@
   <div class="p_subp">
     <p>
       HTML - Continue
-      <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Basic_HTML_syntax#character_references_including_special_characters_in_html"
+      <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Structuring_documents"
         target="_blank">here</a>
-      <span> with "Character references: including special characters in HTML"</span>
+      <span> with Structuring documents</span>
     </p>
     <p>
       CSS - Continue
-      <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics"
+      <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Getting_started#rules"
         target="_blank">here</a>
-      <span> with CSS styling basics"</span>
+      <span> with @rules"</span>
     </p>
   </div>
   <br>
@@ -63,7 +67,10 @@
     <a href="#p_js">Javascipt - For adding interactivity to your pages</a><br>
     <a href="#p_publish">Publish a site for free via Github Pages</a><br>
     <a href="#p_mathml">Mathematical Markup Language</a><br>
-    <a href="#p_version">Version Control</a>
+    <a href="#p_version">Version Control</a><br>
+    <a href="#p_label">Label and Input</a><br>
+    <a href="#p_char_ref">Character references</a><br>
+    <a href="#link_state">Styling Links: A Guide to CSS Pseudo-Classes</a>
 
     <!--
       <a href="#"></a><br>
@@ -74,7 +81,7 @@
   <!--=======================================================================================================-->
   <h2 id="p_add_img">Add an image</h2>
   <img src="images/test.jpg" alt="Test image" class="float_img">
-  <!--=======================================================================================================-->
+    <!--=======================================================================================================-->
   <h2 id="p_lists">Lists</h2>
   <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
   <h3>Ordered lists</h3>
@@ -111,6 +118,16 @@
       </ol>
     </li>
   </ul>
+  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+  <h3>Description lists</h3>
+  <p>Below is a description list. It is a structural element used to group terms with their corresponding descriptions
+    as name-value pairs.</p>
+  <dl>
+    <dt>London, England</dt>
+    <dd>Portrayed as a place of relative stability and tranquility, where characters seek a quiet life amidst personal and social challenges.</dd>
+    <dt>Paris, France</dt>
+    <dd>Depicted as a city of chaos and upheaval, serving as the volatile epicenter of the French Revolution and the subsequent Reign of Terror.</dd>
+  </dl>
   <!--======================================================================================================-->
   <h2 id="p_css">About CSS</h2>
   <p>CSS is a style sheet language. It allows you to change the aspect of HTML elements.</p>
@@ -242,6 +259,93 @@
       here</a> on MDN.
   </p>
   <!--======================================================================================================-->
-</body>
+    <h2 id="p_label">Label and input</h2>
+    <table>
+      <tr>
+        <td>
+          <label for="first-input">Input is disabled</label>
+        </td>
+        <td>
+          <input id="first-input" type="text" disabled />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label for="second-input">This input is enabled</label>
+        </td>
+        <td>
+          <input id="second-input" type="text" />
+        </td>
+      </tr>
+    </table>
+    <table style="margin-left: 15px;">
+      <tr>
+        <td style="font-size: 36px;">⚠️</td>
+        <td>
+          <p>
+            The two labels and inputs have been put in a table to neatly align.<br>
+            Notice the margin at the right of the first column. This effect is made possible by use of
+            <code style="white-space: pre;">padding-right</code>
+            property. Indeed, the margin property is explicitly ignored by browsers for internal table elements such
+            as rows (
+            <code>&lt;tr&gt;</code>
+            ), columns (
+            <code>&lt;col&gt;</code>
+            ), and cells (
+            <code>&lt;td&gt;</code>
+            and <code>&lt;th&gt;</code>
+            ).
+          </p>
+    
+        </td>
+      </tr>
+    </table>
+<!--======================================================================================================-->
+<h2 id="p_char_ref">Character references</h2>
+<table id="tab_char_ref">
+  <tr>
+    <th>Literal</th>
+    <th>Reference</th>
+  </tr>
+  <tr>
+    <td> &lt;</td><td><code>&amp;lt;</code></td>
+  </tr>
+  <tr>
+    <td> &gt;</td><td><code>&amp;gt</code></td>
+  </tr>
+  <tr>
+    <td> &quot;</td><td><code>&amp;quot;</code></td>
+  </tr>
+  <tr>
+    <td> &apos;</td><td><code>&amp;apos;</code></td>
+  </tr>
+  <tr>
+    <td> &amp;</td><td><code>&amp;amp;</code></td>
+  </tr>
+</table>
+<!--======================================================================================================-->
+<h2 id="link_state">Styling Links: A Guide to CSS Pseudo-Classes</h2>
+<p>In HTML and CSS, links (the <a> tag) go through several states as users interact with them. These states are targeted using pseudo-classes to provide visual feedback and improve accessibility for keyboard and screen reader users.</p>
+<p>The five primary link states are:</p>
+<ul>
+  <li><code>:link</code> (Unvisited): The default state for a link that has not been clicked yet. By default, browsers typically display these as blue and underlined.</li>
+  <li><code>:visited</code>: A link the user has previously opened. To protect user privacy, browsers limit the CSS properties you can change here (mostly just colors).</li>
+  <li><code>:hover</code>: Triggered when a user moves their mouse pointer over the link without clicking it. This provides a visual cue that the element is interactive.</li>
+  <li><code>:focus</code>: Occurs when a link is selected via keyboard navigation (usually the Tab key). This is critical for accessibility to show keyboard users where they are on the page.</li>
+  <li><code>:active</code>: The momentary state while a link is actually being clicked or activated. In default browser styling, these often turn red. 
+<h3>The "LVFHA" Ordering Rule</h3>
+<p>Because later CSS rules can override earlier ones, you must define these in a specific order to ensure they work correctly. A common mnemonic for this is "LoVe Fears HAte":</p>
+<ol>
+<li>Link</li>
+<li>Visited</li>
+<li>Focus</li>
+<li>Hover</li>
+<li>Active</li>
+</ol>
+<p>If you define <code>:visited</code> after <code>:hover</code>, for example, the hover effect might never appear for links the user has already seen.</p>
+<p style="margin-left: 30px;"><small><em>This paragraph has been generated by IA, based on the question : "Can you propose a short overview about the different states an html link can take ?"</em></small></p>
+<!--======================================================================================================-->
+<!--======================================================================================================-->
+  </body>
 
 </html>
