@@ -15,7 +15,10 @@ function toggleDone(e) {
 }
 
 listItems.forEach((item) => {
-    item.addEventListener("click", toggleDone);
+    if (item.parentElement.id === "toggle-done")
+    {
+        item.addEventListener("click", toggleDone);
+    }
 });
 
 // ----------------------------------------------------------------------------------
@@ -25,8 +28,13 @@ const label = document.getElementById("p_css");
 label.addEventListener("click", () => { label.style.color = "blue"; });
 
 const image = document.getElementById("img_boxm");
-image.addEventListener("click", () => { image.src = "images/moon.jpg"; });
-
+image.addEventListener("click", () => {
+    if (image.getAttribute('src') === "images/box-model.jpg") {
+        image.src = "images/moon.jpg";
+    } else {
+        image.src = "images/box-model.jpg";
+    }
+});
 // ----------------------------------------------------------------------------------
 // --- Store / Retrieve data from/to the local storage
 

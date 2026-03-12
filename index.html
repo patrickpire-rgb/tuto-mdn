@@ -13,339 +13,584 @@
   <!--Font - Poiret One-->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap">
 
   <!--dayjs library-->
-  <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js" async></script>
 </head>
 
 <body>
-  <h1>MDN - HTML tutorial</h1>
-  <div>
-    <p>Last visit: <span id="last_visit"></span></p>
-    <p>nb of visits: <span id="nb_visits"></span></p>
-  </div>
-
-  <h2>Links</h2>
-  <div class="div_links">
-    <a href="https://developer.mozilla.org/en-US/" target="_blank">MDN - Homepage</a><br>
-    <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development" target="_blank">MDN - WEB
-      development</a><br>
-    <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Environment_setup/Installing_software#installing_a_local_web_server"
-      target="_blank">
-      Need of a local WEB server ? Have a look here.</a><br>
-      <a href="https://github.com/" target="_blank">GitHub</a><br>
-    <a href="https://validator.w3.org/" target="_blank">W3C Markup Validation Service</a><br><br>
-  </div>
-  <!--#######################################################################################################-->
-  <p><strong>Tutorial: ⏭</strong></p>
-  <div class="p_subp">
-    <p>
-      HTML - Continue
-      <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Structuring_documents"
-        target="_blank">here</a>
-      <span> with Structuring documents</span>
-    </p>
-    <p>
-      CSS - Continue
-      <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Getting_started#rules"
-        target="_blank">here</a>
-      <span> with @rules"</span>
-    </p>
-  </div>
-  <br>
-  <p>Playground: Click
-    <a href="playground.html" target="_blank">here</a>
-  </p>
-  <!--#######################################################################################################-->
-  <!--=======================================================================================================-->
-  <h2>Table of contents</h2>
-  <div class="div_links">
-    <a href="#p_add_img">Add an image</a><br>
-    <a href="#p_lists">Lists</a><br>
-    <a href="#p_css">About CSS</a><br>
-    <a href="#p_js">Javascipt - For adding interactivity to your pages</a><br>
-    <a href="#p_publish">Publish a site for free via Github Pages</a><br>
-    <a href="#p_mathml">Mathematical Markup Language</a><br>
-    <a href="#p_version">Version Control</a><br>
-    <a href="#p_label">Label and Input</a><br>
-    <a href="#p_char_ref">Character references</a><br>
-    <a href="#link_state">Styling Links: A Guide to CSS Pseudo-Classes</a>
-
-    <!--
-      <a href="#"></a><br>
-      <a href="#"></a><br>
-      <a href="#"></a><br>
-      -->
-  </div>
-  <!--=======================================================================================================-->
-  <h2 id="p_add_img">Add an image</h2>
-  <img src="images/test.jpg" alt="Test image" class="float_img">
-    <!--=======================================================================================================-->
-  <h2 id="p_lists">Lists</h2>
-  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-  <h3>Ordered lists</h3>
-  <p>The list below is ordered (numbered)</p>
-  <ol>
-    <li>Eat</li>
-    <li>Drink</li>
-    <li>Sleep</li>
-  </ol>
-  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-  <h3>Unordered lists</h3>
-  <p>Example of an unordered list (bulleted)</p>
-  <ul>
-    <li>Pain</li>
-    <li>Fromage</li>
-    <li>Lait</li>
-  </ul>
-  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-  <h3>Mixed lists</h3>
-  <p>This list has both ordered and unordered items</p>
-  <ul>
-    <li>France
-      <ol>
-        <li>Paris</li>
-        <li>Strasbourg</li>
-        <li>Bordeau</li>
-      </ol>
-    </li>
-    <li>Belgique
-      <ol>
-        <li>Bruxelles</li>
-        <li>Oostende</li>
-        <li>Namur</li>
-      </ol>
-    </li>
-  </ul>
-  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-  <h3>Description lists</h3>
-  <p>Below is a description list. It is a structural element used to group terms with their corresponding descriptions
-    as name-value pairs.</p>
-  <dl>
-    <dt>London, England</dt>
-    <dd>Portrayed as a place of relative stability and tranquility, where characters seek a quiet life amidst personal and social challenges.</dd>
-    <dt>Paris, France</dt>
-    <dd>Depicted as a city of chaos and upheaval, serving as the volatile epicenter of the French Revolution and the subsequent Reign of Terror.</dd>
-  </dl>
-  <!--======================================================================================================-->
-  <h2 id="p_css">About CSS</h2>
-  <p>CSS is a style sheet language. It allows you to change the aspect of HTML elements.</p>
-  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-  <h3>Syntax</h3>
-  <img src="images/css-syntax.jpg" alt="CSS Syntax" class="float_img" id="img_css_stx">
-  <p>The whole structure is called a <strong>ruleset</strong> (or rule).</p>
-  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-  <h3>The box model</h3>
-  <p>Most HTML elements can be thought of as boxes.</p>
-  <img src="images/box-model.jpg" alt="The box model" class="float_img" id="img_boxm">
-  <!--======================================================================================================-->
-  <h2 id="p_js">Javascipt - For adding interactivity to your pages</h2>
-  <p>JavaScript is the programming language that adds interactivity and dynamic behavior to an HTML document,
-    transforming
-    a static page into a responsive user experience.</p>
-  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-  <h3>What is JavaScript used for ?</h3>
-  <p>While HTML defines the structure and CSS handles the styling, JavaScript provides the "brain" by allowing
-    the page to:
-  </p>
-    <ul>
-      <li>Respond to user actions like clicks, scrolls, and typing.</li>
-      <li>Update content in real-time without reloading the entire page.</li>
-      <li>Manipulate elements directly through the Document Object Model (DOM).</li>
+  <header>
+    <h1>MDN - HTML tutorial</h1>
+    <div>
+      <p>Last visit: <span id="last_visit"></span></p>
+      <p>nb of visits: <span id="nb_visits"></span></p>
+    </div>
+  </header>
+  <nav>
+    <h2>Links</h2>
+    <h3>Utilities</h3>
+    <ul class="links">
+      <li>
+        <a href="https://developer.mozilla.org/en-US/" target="_blank">MDN - Homepage</a>
+      </li>
+      <li>
+        <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development" target="_blank">MDN - WEB
+          development</a>
+      </li>
+      <li>
+        <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Environment_setup/Installing_software#installing_a_local_web_server"
+          target="_blank">
+          Need of a local WEB server ? Have a look here.</a>
+      </li>
+      <li>
+        <a href="https://github.com/" target="_blank">GitHub</a>
+      </li>
+      <li>
+        <a href="https://validator.w3.org/" target="_blank">W3C Markup Validation Service</a>
+      </li>
     </ul>
-  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-  <h3>Linking</h3>
-  <p>
-    A modern way of linking an external JavaScript file is to place the
-    <code>&lt;script&gt;</code> element in the
-    <code>&lt;head&gt;</code> section and use the
-    <code>defer</code> or
-    <code>async</code> attribute to prevent blocking HTML parsing.
-  </p>
+    <!--#######################################################################################################-->
+    <h3>Tutorial</h3>
+    <ul class="links">
+      <li>
+        <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Test_your_skills/Forms_and_buttons#forms_and_buttons_3"
+          target="_blank">
+          HTML - Continue with Test your skills: Forms and buttons - Forms & buttons 3
+        </a>
+      </li>
+      <li>
+        <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Getting_started#rules"
+          target="_blank">CSS - Continue with @rules
+        </a>
+      </li>
+    </ul>
+    <h3>Playground</h3>
+    <ul class="links">
+      <li>
+        <a href="playground.html" target="_blank">An area to play with new code</a>
+      </li>
+    </ul>
+    <!--#######################################################################################################-->
+    <!--=======================================================================================================-->
+    <h2>Table of contents</h2>
+    <ul class="links">
+      <li><a href="#p_images">Images</a></li>
+      <li><a href="#p_lists">Lists</a><br></li>
+      <li><a href="#p_css">About CSS</a><br></li>
+      <li><a href="#p_js">Javascipt - For adding interactivity to your pages</a></li>
+      <li><a href="#p_publish">Publish a site for free via Github Pages</a></li>
+      <li><a href="#p_mathml">Mathematical Markup Language</a></li>
+      <li><a href="#p_version">Version Control</a></li>
+      <li><a href="#p_label">Label and Input</a><br></li>
+      <li><a href="#p_char_ref">Character references</a></li>
+      <li><a href="#link_state">Styling Links: A Guide to CSS Pseudo-Classes</a></li>
+      <li><a href="#struct_web_site">Structuring a basic website</a></li>
+      <li><a href="#send_email">Send an email</a></li>
+      <li><a href="#html_tables">Tables</a></li>
+      <li><a href="#forms">Forms</a></li>
+      <!--
+        <li><a href="#"></a><br></li>
+        <li><a href="#"></a><br></li>
+        <li><a href="#"></a><br></li>
+        -->
+    </ul>
+  </nav>
+  <main>
+    <!--=======================================================================================================-->
+    <article>
+      <h2 id="p_images">Images</h2>
+      <section>
+        <h3>Add an image</h3>
+        <figure>
+          <img src="images/test.jpg" alt="Earth from space" class="float_img" width="275" height="183">
+          <figcaption>
+            The Earth, as seen from space.
+          </figcaption>
+        </figure>
+      </section>
+      <section>
+        <h3>Image and text vertically centered</h3>
+        <table id="tab-align">
+          <tr>
+            <td><img class="float_img" id="bug-ico" src="images/bug_ico.jpg" alt="Bug icon" width="113" height="113">
+            </td>
+            <td>
+              <p>The image on the left aligns vertically with this text.</p>
+            </td>
+          </tr>
+        </table>
+      </section>
+    </article>
+    <!--=======================================================================================================-->
+    <article>
+      <h2 id="p_lists">Lists</h2>
+      <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+      <section>
+        <h3>Ordered lists</h3>
+        <p>The list below is ordered (numbered)</p>
+        <ol>
+          <li>Eat</li>
+          <li>Drink</li>
+          <li>Sleep</li>
+        </ol>
+      </section>
+      <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+      <section>
+        <h3>Unordered lists</h3>
+        <p>Example of an unordered list (bulleted)</p>
+        <ul id="toggle-done">
+          <li>Pain</li>
+          <li>Fromage</li>
+          <li>Lait</li>
+        </ul>
+      </section>
+      <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+      <section>
+        <h3>Mixed lists</h3>
+        <p>This list has both ordered and unordered items</p>
+        <ul>
+          <li>France
+            <ol>
+              <li>Paris</li>
+              <li>Strasbourg</li>
+              <li>Bordeau</li>
+            </ol>
+          </li>
+          <li>Belgique
+            <ol>
+              <li>Bruxelles</li>
+              <li>Oostende</li>
+              <li>Namur</li>
+            </ol>
+          </li>
+        </ul>
+      </section>
+      <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+      <section>
+        <h3>Description lists</h3>
+        <p>Below is a description list. It is a structural element used to group terms with their corresponding
+          descriptions
+          as name-value pairs.</p>
+        <dl>
+          <dt>London, England</dt>
+          <dd>Portrayed as a place of relative stability and tranquility, where characters seek a quiet life amidst
+            personal
+            and social challenges.</dd>
+          <dt>Paris, France</dt>
+          <dd>Depicted as a city of chaos and upheaval, serving as the volatile epicenter of the French Revolution and
+            the
+            subsequent Reign of Terror.</dd>
+        </dl>
+      </section>
+    </article>
+    <!--======================================================================================================-->
+    <article>
+      <h2 id="p_css">About CSS</h2>
+      <p>CSS is a style sheet language. It allows you to change the aspect of HTML elements.</p>
+      <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+      <section>
+        <h3>Syntax</h3>
+        <img src="images/css-syntax.jpg" alt="CSS Syntax" class="float_img" id="img_css_stx">
+        <p>The whole structure is called a <strong>ruleset</strong> (or rule).</p>
+      </section>
+      <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+      <section>
+        <h3>The box model</h3>
+        <p>Most HTML elements can be thought of as boxes.</p>
+        <img src="images/box-model.jpg" alt="The box model" class="float_img" id="img_boxm">
+      </section>
+    </article>
+    <!--======================================================================================================-->
+    <article>
+      <h2 id="p_js">Javascipt - For adding interactivity to your pages</h2>
+      <p>JavaScript is the programming language that adds interactivity and dynamic behavior to an HTML document,
+        transforming
+        a static page into a responsive user experience.</p>
+      <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+      <section>
+        <h3>What is JavaScript used for ?</h3>
+        <p>While HTML defines the structure and CSS handles the styling, JavaScript provides the "brain" by allowing
+          the page to:
+        </p>
+        <ul>
+          <li>Respond to user actions like clicks, scrolls, and typing.</li>
+          <li>Update content in real-time without reloading the entire page.</li>
+          <li>Manipulate elements directly through the Document Object Model (DOM).</li>
+        </ul>
+      </section>
+      <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+      <section>
+        <h3>Linking</h3>
+        <p>
+          A modern way of linking an external JavaScript file is to place the
+          <code>&lt;script&gt;</code> element in the
+          <code>&lt;head&gt;</code> section and use the
+          <code>defer</code> or
+          <code>async</code> attribute to prevent blocking HTML parsing.
+        </p>
 
-  <p>
-    Use <code>defer</code> for scripts that depend on the DOM or when execution order matters.
-    Use <code>async</code> otherwise (for independent scripts).
-  </p>
-  <p>But in modern application code, the preferred approach is to use <code>type="module"</code>.</p>
-  <p>Module scripts are deferred by default, execute after HTML parsing, preserve execution order, and support
-    import/export, making them cleaner and better structured.</p>
-  <p>async remains useful for independent third-party scripts (analytics, ads), and defer is still relevant for classic
-    (non-module) scripts that rely on the DOM.</p>
-  <p>Example using 'type=module', to be added at the end of the <code>&lt;head&gt;</code> section:</p>
-  <p>
-    <code>&lt;script type="module" src="app.js" &gt;&lt;/script&gt;</code>
-  </p>
-  <div class="note">
-    <strong>Note:</strong> ES modules may not always load, for example when opening a local HTML file directly in the
-    browser, because browsers block module scripts for security reasons.
-  </div>
-  <!--======================================================================================================-->
-  <h2 id="p_publish">Publish a site for free via Github Pages</h2>
-  <p>The steps to publish a site via Github are as follow:</p>
-  <ol>
-    <li>Create an account
-      <ul>
-        <li>Go to <a href="https://github.com/" target="_blank">Github</a></li>
-        <li>Create a free account</li>
-      </ul>
-    </li>
-    <li>Create a repository
-      <ul>
-        <li>Click on <span class="option">New Repository</span></li>
-        <li>Choose a name. For example: my-test-site.</li>
-        <li>Public</li>
-        <li>Add a README</li>
-        <li>Create repository</li>
-      </ul>
-    </li>
-    <li>Add the site's files
-      <ul>
-        <li>Click on <span class="option">Add file</span></li>
-        <li>→ Upload files</li>
-        <li>Add all the files<br><span class="note">
-            <strong>Note:</strong> One way is to have the files dropped all at once from the explorer
-          </span> </li>
-        <li>Commit changes</li>
-      </ul>
-      <span class="note"><strong>⚠️ Important:</strong> The main access file must be named 'index.html'.</span>
-    </li>
-    <li>Activate GitHub Pages
-      <ul>
-        <li>Click on <span class="option">Settings</span></li>
-        <li>Menu de gauche, choisir <span class="option">Pages</span></li>
-        <li>Source = "Deploy from a branch"</li>
-        <li>Branch = main</li>
-        <li>Save.</li>
-      </ul>
-      <table style="vertical-align: middle;">
+        <p>
+          Use <code>defer</code> for scripts that depend on the DOM or when execution order matters.<br>
+          Use <code>async</code> otherwise (for independent scripts).
+        </p>
+        <p>But in modern application code, the preferred approach is to use <code>type="module"</code>.</p>
+        <p>Module scripts are deferred by default, execute after HTML parsing, preserve execution order, and support
+          import/export, making them cleaner and better structured.</p>
+        <p>async remains useful for independent third-party scripts (analytics, ads), and defer is still relevant for
+          classic
+          (non-module) scripts that rely on the DOM.</p>
+        <p>Example using 'type=module', to be added at the end of the <code>&lt;head&gt;</code> section:</p>
+        <p>
+          <code>&lt;script type="module" src="app.js" &gt;&lt;/script&gt;</code>
+        </p>
+      </section>
+      <div class="note">
+        <strong>Note:</strong> ES modules may not always load, for example when opening a local HTML file directly in
+        the
+        browser, because browsers block module scripts for security reasons.
+      </div>
+    </article>
+    <!--======================================================================================================-->
+    <article>
+      <h2 id="p_publish">Publish a site for free via Github Pages</h2>
+      <p>The steps to publish a site via Github are as follow:</p>
+      <ol>
+        <li>Create an account
+          <ul>
+            <li>Go to <a href="https://github.com/" target="_blank">Github</a></li>
+            <li>Create a free account</li>
+          </ul>
+        </li>
+        <li>Create a repository
+          <ul>
+            <li>Click on <span class="option">New Repository</span></li>
+            <li>Choose a name. For example: my-test-site.</li>
+            <li>Public</li>
+            <li>Add a README</li>
+            <li>Create repository</li>
+          </ul>
+        </li>
+        <li>Add the site's files
+          <ul>
+            <li>Click on <span class="option">Add file</span></li>
+            <li>→ Upload files</li>
+            <li>Add all the files<br><span class="note">
+                <strong>Note:</strong> One way is to have the files dropped all at once from the explorer
+              </span> </li>
+            <li>Commit changes</li>
+          </ul>
+          <span class="note"><strong>⚠️ Important:</strong> The main access file must be named 'index.html'.</span>
+        </li>
+        <li>Activate GitHub Pages
+          <ul>
+            <li>Click on <span class="option">Settings</span></li>
+            <li>Menu de gauche, choisir <span class="option">Pages</span></li>
+            <li>Source = "Deploy from a branch"</li>
+            <li>Branch = main</li>
+            <li>Save.</li>
+          </ul>
+          <table style="vertical-align: middle;">
+            <tr>
+              <td class="big_emo">⏳</td>
+              <td>Wait for one or two minutes</td>
+            </tr>
+          </table>
+          <p>A new URL appears in the page</p>
+        </li>
+        <li>Test on remote device
+          <ul>
+            <li>Open the URL on the remote device</li>
+            <li>There we are. When uploading new files, after committing, the site updates automatically.</li>
+          </ul>
+        </li>
+      </ol>
+    </article>
+    <!--======================================================================================================-->
+    <article>
+      <h2 id="p_mathml">Mathematical Markup Language</h2>
+      <p>Use <strong>MathML</strong> (Mathematical Markup Language) to use mathematical notation.</p>
+      <section>
+        <h3>Example</h3>
+        <p>
+          The fraction
+          <math>
+            <mfrac>
+              <mn>1</mn>
+              <mn>3</mn>
+            </mfrac>
+          </math>
+          is not a decimal number.
+        </p>
+      </section>
+      <div class="note">
+        <p><strong>Note:</strong> For more information, see
+          <a href="https://developer.mozilla.org/en-US/docs/Web/MathML" target="_blank">
+            here</a> on MDN.
+        </p>
+      </div>
+    </article>
+    <!--======================================================================================================-->
+    <article>
+      <h2 id="p_version">Version Control</h2>
+      <p>Information about <strong>version control</strong> using Git and GitHub is available
+        <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Version_control" target="_blank">
+          here</a> on MDN.
+      </p>
+    </article>
+    <!--======================================================================================================-->
+    <article>
+      <h2 id="p_label">Label and input</h2>
+      <table>
         <tr>
-          <td class="big_emo">⏳</td>
-          <td>Wait for one or two minutes</td>
+          <td>
+            <label for="first-input">Input is disabled</label>
+          </td>
+          <td>
+            <input id="first-input" type="text" disabled>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="second-input">This input is enabled</label>
+          </td>
+          <td>
+            <input id="second-input" type="text">
+          </td>
         </tr>
       </table>
-      <p>A new URL appears in the page</p>
-    </li>
-    <li>Test on remote device
+      <table style="margin-left: 15px;">
+        <tr>
+          <td style="font-size: 36px;">⚠️</td>
+          <td>
+            <p>
+              The two labels and inputs have been put in a table to neatly align.<br>
+              Notice the margin at the right of the first column. This effect is made possible by use of
+              <code style="white-space: pre;">padding-right</code>
+              property. Indeed, the margin property is explicitly ignored by browsers for internal table elements such
+              as rows (
+              <code>&lt;tr&gt;</code>
+              ), columns (
+              <code>&lt;col&gt;</code>
+              ), and cells (
+              <code>&lt;td&gt;</code>
+              and <code>&lt;th&gt;</code>
+              ).
+            </p>
+
+          </td>
+        </tr>
+      </table>
+    </article>
+    <!--======================================================================================================-->
+    <article>
+      <h2 id="p_char_ref">Character references</h2>
+      <table class="p_table">
+        <caption>Special characters</caption>
+        <thead>
+          <tr>
+            <th>Literal</th>
+            <th>Reference</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td> &lt;</td>
+            <td><code>&amp;lt;</code></td>
+          </tr>
+          <tr>
+            <td> &gt;</td>
+            <td><code>&amp;gt</code></td>
+          </tr>
+          <tr>
+            <td> &quot;</td>
+            <td><code>&amp;quot;</code></td>
+          </tr>
+          <tr>
+            <td> &apos;</td>
+            <td><code>&amp;apos;</code></td>
+          </tr>
+          <tr>
+            <td> &amp;</td>
+            <td><code>&amp;amp;</code></td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <th scope="row">any</th>
+            <td>&amp;any;</td>
+          </tr>
+        </tfoot>
+      </table>
+    </article>
+    <!--======================================================================================================-->
+    <article>
+      <h2 id="link_state">Styling Links: A Guide to CSS Pseudo-Classes</h2>
+      <p>
+        In CSS, a pseudo-class is a keyword added to a selector
+        that specifies a special state of the element being
+        selected.
+      </p>
+      <p>Links (the <code>&lt;a&gt;</code> tag) go through several states as users interact with them.
+        These states are targeted using pseudo-classes to provide visual feedback and improve accessibility for keyboard
+        and screen reader users.
+      </p>
+      <p>The five primary link states are:</p>
       <ul>
-        <li>Open the URL on the remote device</li>
-        <li>There we are. When uploading new files, after committing, the site updates automatically.</li>
+        <li><code>:link</code> (Unvisited): The default state for a link that has not been clicked yet. By default,
+          browsers
+          typically display these as blue and underlined.</li>
+        <li><code>:visited</code>: A link the user has previously opened. To protect user privacy, browsers limit the
+          CSS
+          properties you can change here (mostly just colors).</li>
+        <li><code>:hover</code>: Triggered when a user moves their mouse pointer over the link without clicking it. This
+          provides a visual cue that the element is interactive.</li>
+        <li><code>:focus</code>: Occurs when a link is selected via keyboard navigation (usually the Tab key). This is
+          critical for accessibility to show keyboard users where they are on the page.</li>
+        <li><code>:active</code>: The momentary state while a link is actually being clicked or activated. In default
+          browser styling, these often turn red.
+        </li>
       </ul>
-    </li>
-  </ol>
-  <!--======================================================================================================-->
-  <h2 id="p_mathml">Mathematical Markup Language</h2>
-  <p>Use <strong>MathML</strong> (Mathematical Markup Language) to use mathematical notation.</p>
-  <p>
-    The fraction
-    <math>
-      <mfrac>
-        <mn>1</mn>
-        <mn>3</mn>
-      </mfrac>
-    </math>
-    is not a decimal number.
-  </p>
-  <br>
-  <p>For more information, see
-    <a href="https://developer.mozilla.org/en-US/docs/Web/MathML" target="_blank">
-      here</a> on MDN.
-  </p>
-  <!--======================================================================================================-->
-  <h2 id="p_version">Version Control</h2>
-  <p>Information about <strong>version control</strong> using Git and GitHub is available
-    <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Version_control" target="_blank">
-      here</a> on MDN.
-  </p>
-  <!--======================================================================================================-->
-    <h2 id="p_label">Label and input</h2>
-    <table>
-      <tr>
-        <td>
-          <label for="first-input">Input is disabled</label>
-        </td>
-        <td>
-          <input id="first-input" type="text" disabled />
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <label for="second-input">This input is enabled</label>
-        </td>
-        <td>
-          <input id="second-input" type="text" />
-        </td>
-      </tr>
-    </table>
-    <table style="margin-left: 15px;">
-      <tr>
-        <td style="font-size: 36px;">⚠️</td>
-        <td>
-          <p>
-            The two labels and inputs have been put in a table to neatly align.<br>
-            Notice the margin at the right of the first column. This effect is made possible by use of
-            <code style="white-space: pre;">padding-right</code>
-            property. Indeed, the margin property is explicitly ignored by browsers for internal table elements such
-            as rows (
-            <code>&lt;tr&gt;</code>
-            ), columns (
-            <code>&lt;col&gt;</code>
-            ), and cells (
-            <code>&lt;td&gt;</code>
-            and <code>&lt;th&gt;</code>
-            ).
-          </p>
-    
-        </td>
-      </tr>
-    </table>
-<!--======================================================================================================-->
-<h2 id="p_char_ref">Character references</h2>
-<table id="tab_char_ref">
-  <tr>
-    <th>Literal</th>
-    <th>Reference</th>
-  </tr>
-  <tr>
-    <td> &lt;</td><td><code>&amp;lt;</code></td>
-  </tr>
-  <tr>
-    <td> &gt;</td><td><code>&amp;gt</code></td>
-  </tr>
-  <tr>
-    <td> &quot;</td><td><code>&amp;quot;</code></td>
-  </tr>
-  <tr>
-    <td> &apos;</td><td><code>&amp;apos;</code></td>
-  </tr>
-  <tr>
-    <td> &amp;</td><td><code>&amp;amp;</code></td>
-  </tr>
-</table>
-<!--======================================================================================================-->
-<h2 id="link_state">Styling Links: A Guide to CSS Pseudo-Classes</h2>
-<p>In HTML and CSS, links (the <a> tag) go through several states as users interact with them. These states are targeted using pseudo-classes to provide visual feedback and improve accessibility for keyboard and screen reader users.</p>
-<p>The five primary link states are:</p>
-<ul>
-  <li><code>:link</code> (Unvisited): The default state for a link that has not been clicked yet. By default, browsers typically display these as blue and underlined.</li>
-  <li><code>:visited</code>: A link the user has previously opened. To protect user privacy, browsers limit the CSS properties you can change here (mostly just colors).</li>
-  <li><code>:hover</code>: Triggered when a user moves their mouse pointer over the link without clicking it. This provides a visual cue that the element is interactive.</li>
-  <li><code>:focus</code>: Occurs when a link is selected via keyboard navigation (usually the Tab key). This is critical for accessibility to show keyboard users where they are on the page.</li>
-  <li><code>:active</code>: The momentary state while a link is actually being clicked or activated. In default browser styling, these often turn red. 
-<h3>The "LVFHA" Ordering Rule</h3>
-<p>Because later CSS rules can override earlier ones, you must define these in a specific order to ensure they work correctly. A common mnemonic for this is "LoVe Fears HAte":</p>
-<ol>
-<li>Link</li>
-<li>Visited</li>
-<li>Focus</li>
-<li>Hover</li>
-<li>Active</li>
-</ol>
-<p>If you define <code>:visited</code> after <code>:hover</code>, for example, the hover effect might never appear for links the user has already seen.</p>
-<p style="margin-left: 30px;"><small><em>This paragraph has been generated by IA, based on the question : "Can you propose a short overview about the different states an html link can take ?"</em></small></p>
-<!--======================================================================================================-->
-<!--======================================================================================================-->
-  </body>
+      <section>
+        <h3>The "LVFHA" Ordering Rule</h3>
+        <p>Because later CSS rules can override earlier ones, you must define these in a specific order to ensure they
+          work correctly. A common mnemonic for this is "LoVe Fears HAte":
+        </p>
+        <ol>
+          <li>Link</li>
+          <li>Visited</li>
+          <li>Focus</li>
+          <li>Hover</li>
+          <li>Active</li>
+        </ol>
+        <p>If you define <code>:visited</code> after <code>:hover</code>, for example, the hover effect might never
+          appear
+          for links the user has already seen.
+        </p>
+      </section>
+      <div class="note">
+        <p><strong>Note:</strong> This paragraph has been generated by IA (with several tries), based on the question :
+          "Can you propose a short overview about the different states an html link can take ?"
+        </p>
+      </div>
+    </article>
+    <!--======================================================================================================-->
+    <article>
+      <h2 id="struct_web_site">Structuring a basic website</h2>
+      <p>An <a
+          href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Structuring_documents#structuring_a_basic_website"
+          target="_blank">
+          article on MDN</a> explores this.
+      </p>
+    </article>
+    <!--======================================================================================================-->
+    <article>
+      <h2 id="send_email">Send an email</h2>
+      <div class="d_email">
+        <a
+          href="mailto:patrick.pire@gmail.com?subject=Mail%20from%20my%20site&body=This%20is%20the%20body%20of%20this%20email">Send
+          mail</a>
+      </div>
+    </article>
+    <!--======================================================================================================-->
+    <article>
+      <h2 id="html_tables">Tables</h2>
+      <section>
+        <h3>Simple table</h3>
+        <table class="h_tab">
+          <tr>
+            <td>&nbsp;</td>
+            <th>Knocky</th>
+            <th>Flor</th>
+            <th>Ella</th>
+            <th>Juan</th>
+          </tr>
+          <tr>
+            <th>Breed</th>
+            <td>Jack Russell</td>
+            <td>Poodle</td>
+            <td>Streetdog</td>
+            <td>Cocker Spaniel</td>
+          </tr>
+          <tr>
+            <th>Age</th>
+            <td>16</td>
+            <td>9</td>
+            <td>10</td>
+            <td>5</td>
+          </tr>
+          <tr>
+            <th>Owner</th>
+            <td>Mother-in-law</td>
+            <td>Me</td>
+            <td>Me</td>
+            <td>Sister-in-law</td>
+          </tr>
+          <tr>
+            <th>Eating Habits</th>
+            <td>Eats everyone's leftovers</td>
+            <td>Nibbles at food</td>
+            <td>Hearty eater</td>
+            <td>Will eat till he explodes</td>
+          </tr>
+        </table>
+      </section>
+      <section>
+        <h3>Colspan and Rowspan</h3>
+        <table class="h_tab">
+          <tr>
+            <th colspan="2">Animals</th>
+          </tr>
+          <tr>
+            <th colspan="2">Hippopotamus</th>
+          </tr>
+          <tr>
+            <th rowspan="2">Horse</th>
+            <td>Mare</td>
+          </tr>
+          <tr>
+            <td>Stallion</td>
+          </tr>
+          <tr>
+            <th colspan="2">Crocodile</th>
+          </tr>
+          <tr>
+            <th rowspan="2">Chicken</th>
+            <td>Hen</td>
+          </tr>
+          <tr>
+            <td>Rooster</td>
+          </tr>
+
+        </table>
+      </section>
+      <section>
+        <h3>Planets</h3>
+        <p>This section provides a more advanced example of html table.
+          To go further, follow these links:
+        </p>
+        <ul class="links">
+          <li>
+            <a href="planets.html">Planet table</a>
+          </li>
+          <li>
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Planet_data_table">
+              Tutorial on MDN</a>.
+          </li>
+
+        </ul>
+      </section>
+    </article>
+    <!--======================================================================================================-->
+    <article>
+      <h2 id="forms">Forms</h2>
+      <ul class="links">
+        <li><a href="form.html">Complete example</a></li>
+      </ul>
+    </article>
+    <!--======================================================================================================-->
+  </main>
+</body>
 
 </html>
