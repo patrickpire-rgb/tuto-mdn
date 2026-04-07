@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+
+  <style>
+    html {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      display: flex;
+      flex-direction: column;
+      min-height: 100dvh;
+      margin: 0;
+    }
+    main {
+      flex-grow: 1;
+    }
+    header,
+    main {
+      margin: 0 20px;
+    }
+    footer {
+      padding: 20px;
+      background-color: chocolate;
+      color: white;
+      font-weight: bold;
+    }
+  </style>
+  <title>Sticky footer</title>
+</head>
+<body>
+  <header>
+    <h1>Sticky footer</h1>
+  </header>
+  <main>
+    <p>There is a short content on this page but the footer remains at the bottom.</p>
+  </main>
+  <footer>
+    <p><strong>&copy;</strong> 2025 Nobody</p>
+  </footer>
+</body>
+
+</html>

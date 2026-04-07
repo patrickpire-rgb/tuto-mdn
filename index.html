@@ -22,7 +22,7 @@
 <body>
   <header>
     <h1>MDN - HTML tutorial</h1>
-    <div>
+    <div class="flex-row user-info">
       <p>Last visit: <span id="last_visit"></span></p>
       <p>nb of visits: <span id="nb_visits"></span></p>
     </div>
@@ -30,7 +30,7 @@
   <nav>
     <h2>Links</h2>
     <h3>Utilities</h3>
-    <ul class="links">
+    <ul class="links shiftl-25">
       <li>
         <a href="https://developer.mozilla.org/en-US/" target="_blank">MDN - Homepage</a>
       </li>
@@ -52,24 +52,32 @@
       <li>
         <a href="https://jigsaw.w3.org/css-validator/" target="_blank">W3C CSS Validation Service</a>
       </li>
+      <li>
+        <a href="https://fonts.google.com/" target="_blank">Google fonts</a> and related
+        <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Text_styling/Web_fonts#using_an_online_font_service"
+          target="_blank">
+          info on MDN
+        </a>
+      </li>
     </ul>
     <!--#######################################################################################################-->
     <h3>Tutorial</h3>
-    <ul class="links">
+    <ul class="links shiftl-25">
       <li>
-        <a href="#">
-          <!-- target="_blank"> -->
+        <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content"
+          target="_blank">
           HTML - This course is finished
         </a>
       </li>
       <li>
-        <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Handling_conflicts"
-          target="_blank">CSS - Handling conflicts
+        <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Flexbox"
+          target="_blank">
+          CSS - CSS layout - Flexbox
         </a>
       </li>
     </ul>
     <h3>Playground</h3>
-    <ul class="links">
+    <ul class="links shiftl-25">
       <li>
         <a href="playground.html" target="_blank">An area to play with new code</a>
       </li>
@@ -77,7 +85,7 @@
     <!--#######################################################################################################-->
     <!--=======================================================================================================-->
     <h2>Table of contents</h2>
-    <ul class="links" id="contents">
+    <ul class="links two-cols" id="contents">
       <li><a href="#p_images">Images</a></li>
       <li><a href="#p_lists">Lists</a><br></li>
       <li><a href="#p_css">CSS - A short introduction</a><br></li>
@@ -85,7 +93,6 @@
       <li><a href="#p_publish">Publish a site for free via Github Pages</a></li>
       <li><a href="#p_mathml">Mathematical Markup Language</a></li>
       <li><a href="#p_version">Version Control</a></li>
-      <li><a href="#p_label">Label and Input</a><br></li>
       <li><a href="#p_char_ref">Character references</a></li>
       <li><a href="#link_state">Styling Links: A Guide to CSS Pseudo-Classes</a></li>
       <li><a href="#struct_web_site">Structuring a basic website</a></li>
@@ -96,11 +103,10 @@
       <li><a href="#css-box">The box model</a></li>
       <li><a href="#cascade">About cascading and inheritance</a></li>
       <li><a href="#alt-box">The alternative CSS box model</a></li>
-      <!--
-        <li><a href="#"></a><br></li>
-        <li><a href="#"></a><br></li>
-        <li><a href="#"></a><br></li>
-        -->
+      <li><a href="#form-inherit">Normalizing form behavior</a></li>
+      <li><a href="#adv-styling">Advanced styling</a></li>
+      <li><a href="#css-tidy">Tips to keep your CSS tidy</a></li>
+      <li><a href="#css-layout">CSS Layout</a></li>
     </ul>
   </nav>
   <main>
@@ -110,7 +116,7 @@
       <section>
         <h3>Add an image</h3>
         <figure>
-          <img src="images/test.jpg" alt="Earth from space" class="float_img" width="275" height="183">
+          <img src="images/test.jpg" alt="Earth from space" width="275" height="183">
           <figcaption>
             The Earth, as seen from space.
           </figcaption>
@@ -118,21 +124,44 @@
       </section>
       <section>
         <h3>Image and text vertically centered</h3>
-        <table id="tab-align">
-          <tr>
-            <td><img class="float_img" id="bug-ico" src="images/bug_ico.jpg" alt="Bug icon" width="113" height="113">
-            </td>
-            <td>
-              <p>The image on the left aligns vertically with this text.</p>
-            </td>
-          </tr>
-        </table>
+        <div class="flex-row left-15">
+          <img src="images/bug_ico.jpg" alt="Bug icon" width="113" height="113">
+          <p>The image on the left aligns vertically with this text, even if the text has to wrap to multiple lines.</p>
+        </div>
+      </section>
+      <section>
+        <h3>Images - Modern Setup</h3>
+        <p>Combining modern and efficient CSS and HTML habits looks like this:
+        <p><strong>html</strong></p>
+        <p class="code-block">
+          &lt;div class="container"&gt;<br>
+          <span class="html-comment">
+            &nbsp;&nbsp;&lt;!-- Attributes here define the SHAPE for the browser --&gt;<br>
+          </span>
+          &nbsp;&nbsp;&lt;img src="beach-small.jpg" width="300" height="200"<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;="Sunny beach"&gt;<br>
+          &lt;/div&gt;
+        </p>
+        <p><strong>css </strong></p>
+        <p class="code-block">
+          .container img {<br>
+          &nbsp;&nbsp;width: 100%; /* Fill the div width */<br>
+          &nbsp;&nbsp;height: auto; /* Or a fixed height like 200px */<br>
+          &nbsp;&nbsp;object-fit: cover; /* Fix any ratio mismatch */<br>
+          }
+        </p>
+        <p><strong>Summary</strong></p>
+        <p>HTML attributes (width and height) prevent the page from jumping.</p>
+        <p>A file size appropriate for the use of the image makes the page load fast.
+          So adapt the size of the files you set ready for upload, according to their intended use.
+        </p>
+        <p>CSS (object-fit) makes the image look pretty in its box.</p>
       </section>
     </article>
     <!--=======================================================================================================-->
     <article>
       <h2 id="p_lists">Lists</h2>
-      <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+      <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
       <section>
         <h3>Ordered lists</h3>
         <p>The list below is ordered (numbered)</p>
@@ -142,7 +171,7 @@
           <li>Sleep</li>
         </ol>
       </section>
-      <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+      <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
       <section>
         <h3>Unordered lists</h3>
         <p>Example of an unordered list (bulleted)</p>
@@ -152,7 +181,7 @@
           <li>Lait</li>
         </ul>
       </section>
-      <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+      <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
       <section>
         <h3>Mixed lists</h3>
         <p>This list has both ordered and unordered items</p>
@@ -173,7 +202,7 @@
           </li>
         </ul>
       </section>
-      <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+      <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
       <section>
         <h3>Description lists</h3>
         <p>Below is a description list. It is a structural element used to group terms with their corresponding
@@ -191,30 +220,30 @@
         </dl>
       </section>
     </article>
-    <!--======================================================================================================-->
+    <!--=======================================================================================================-->
     <article>
-      <h2 id="p_css">CSS - A short introduction</h2>
+      <h2 id="p_css" style="color: blue;">CSS - A short introduction</h2>
       <p>CSS is a style sheet language. It allows you to change the aspect of HTML elements.</p>
-      <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+      <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
       <section>
         <h3>Syntax</h3>
-        <img src="images/css-syntax.jpg" alt="CSS Syntax" class="float_img" id="img_css_stx">
+        <img id="img_css_stx" src="images/css-syntax.jpg" alt="CSS Syntax" width="842" height="266">
         <p>The whole structure is called a <strong>ruleset</strong> (or rule).</p>
       </section>
-      <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+      <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
       <section>
         <h3>The box model</h3>
         <p>Most HTML elements can be thought of as boxes.</p>
-        <img src="images/box-model.jpg" alt="The box model" class="float_img" id="img_boxm">
+        <img src="images/box-model.jpg" alt="The box model" class="float_img" id="img_boxm" width="926" height="531">
       </section>
     </article>
-    <!--======================================================================================================-->
+    <!--=======================================================================================================-->
     <article>
       <h2 id="p_js">Javascipt - For adding interactivity to your pages</h2>
       <p>JavaScript is the programming language that adds interactivity and dynamic behavior to an HTML document,
         transforming
         a static page into a responsive user experience.</p>
-      <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+      <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
       <section>
         <h3>What is JavaScript used for ?</h3>
         <p>While HTML defines the structure and CSS handles the styling, JavaScript provides the "brain" by allowing
@@ -226,7 +255,7 @@
           <li>Manipulate elements directly through the Document Object Model (DOM).</li>
         </ul>
       </section>
-      <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+      <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
       <section>
         <h3>Linking</h3>
         <p>
@@ -238,8 +267,8 @@
         </p>
 
         <p>
-          Use <code>defer</code> for scripts that depend on the DOM or when execution order matters.<br>
-          Use <code>async</code> otherwise (for independent scripts).
+          &nbsp;&nbsp;Use <code>defer</code> for scripts that depend on the DOM or when execution order matters.<br>
+          &nbsp;&nbsp;Use <code>async</code> otherwise (for independent scripts).
         </p>
         <p>But in modern application code, the preferred approach is to use <code>type="module"</code>.</p>
         <p>Module scripts are deferred by default, execute after HTML parsing, preserve execution order, and support
@@ -249,16 +278,16 @@
           (non-module) scripts that rely on the DOM.</p>
         <p>Example using 'type=module', to be added at the end of the <code>&lt;head&gt;</code> section:</p>
         <p>
-          <code>&lt;script type="module" src="app.js" &gt;&lt;/script&gt;</code>
+          &nbsp;&nbsp;<code>&lt;script type="module" src="app.js" &gt;&lt;/script&gt;</code>
         </p>
+        <div class="note">
+          <strong>Note:</strong> ES modules may not always load, for example when opening a local HTML file directly in
+          the
+          browser, because browsers block module scripts for security reasons.
+        </div>
       </section>
-      <div class="note">
-        <strong>Note:</strong> ES modules may not always load, for example when opening a local HTML file directly in
-        the
-        browser, because browsers block module scripts for security reasons.
-      </div>
     </article>
-    <!--======================================================================================================-->
+    <!--=======================================================================================================-->
     <article>
       <h2 id="p_publish">Publish a site for free via Github Pages</h2>
       <p>The steps to publish a site via Github are as follow:</p>
@@ -271,7 +300,7 @@
         </li>
         <li>Create a repository
           <ul>
-            <li>Click on <span class="option">New Repository</span></li>
+            <li>Click on <code>New Repository</code></li>
             <li>Choose a name. For example: my-test-site.</li>
             <li>Public</li>
             <li>Add a README</li>
@@ -280,7 +309,7 @@
         </li>
         <li>Add the site's files
           <ul>
-            <li>Click on <span class="option">Add file</span></li>
+            <li>Click on <code>Add file</code></li>
             <li>→ Upload files</li>
             <li>Add all the files<br><span class="note">
                 <strong>Note:</strong> One way is to have the files dropped all at once from the explorer
@@ -291,19 +320,23 @@
         </li>
         <li>Activate GitHub Pages
           <ul>
-            <li>Click on <span class="option">Settings</span></li>
-            <li>Menu de gauche, choisir <span class="option">Pages</span></li>
+            <li>Click on <code>Settings</code></li>
+            <li>Menu de gauche, choisir <code>Pages</code></li>
             <li>Source = "Deploy from a branch"</li>
             <li>Branch = main</li>
             <li>Save.</li>
           </ul>
-          <table style="vertical-align: middle;">
-            <tr>
-              <td class="big_emo">⏳</td>
-              <td>Wait for one or two minutes</td>
-            </tr>
-          </table>
-          <p>A new URL appears in the page</p>
+          <p><span class="big-emo">⏳</span>
+            Wait for one or two minutes
+          </p>
+          <!--
+          <div class="flex-row">
+            <p class="big-emo">⏳</p>
+            <p>Wait for one or two minutes</p>
+          </div>
+          -->
+          <p><span class="big-emo">&#10145;&#xFE0F;</span>
+            A new URL appears in the page</p>
         </li>
         <li>Test on remote device
           <ul>
@@ -313,12 +346,12 @@
         </li>
       </ol>
     </article>
-    <!--======================================================================================================-->
+    <!--=======================================================================================================-->
     <article>
       <h2 id="p_mathml">Mathematical Markup Language</h2>
       <p>Use <strong>MathML</strong> (Mathematical Markup Language) to use mathematical notation.</p>
+      <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
       <section>
-      <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
         <h3>Example</h3>
         <p>
           The fraction
@@ -331,14 +364,12 @@
           is not a decimal number.
         </p>
       </section>
-      <div class="note">
-        <p><strong>Note:</strong> For more information, see
-          <a href="https://developer.mozilla.org/en-US/docs/Web/MathML" target="_blank">
-            here</a> on MDN.
-        </p>
-      </div>
+      <p class="note"><strong>Note:</strong> For more information, see
+        <a href="https://developer.mozilla.org/en-US/docs/Web/MathML" target="_blank">
+          here</a> on MDN.
+      </p>
     </article>
-    <!--======================================================================================================-->
+    <!--=======================================================================================================-->
     <article>
       <h2 id="p_version">Version Control</h2>
       <p>Information about <strong>version control</strong> using Git and GitHub is available
@@ -346,54 +377,10 @@
           here</a> on MDN.
       </p>
     </article>
-    <!--======================================================================================================-->
-    <article>
-      <h2 id="p_label">Label and input</h2>
-      <table>
-        <tr>
-          <td>
-            <label for="first-input">Input is disabled</label>
-          </td>
-          <td>
-            <input id="first-input" type="text" disabled>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <label for="second-input">This input is enabled</label>
-          </td>
-          <td>
-            <input id="second-input" type="text">
-          </td>
-        </tr>
-      </table>
-      <table style="margin-left: 15px;">
-        <tr>
-          <td style="font-size: 36px;">⚠️</td>
-          <td>
-            <p>
-              The two labels and inputs have been put in a table to neatly align.<br>
-              Notice the margin at the right of the first column. This effect is made possible by use of
-              <code style="white-space: pre;">padding-right</code>
-              property. Indeed, the margin property is explicitly ignored by browsers for internal table elements such
-              as rows (
-              <code>&lt;tr&gt;</code>
-              ), columns (
-              <code>&lt;col&gt;</code>
-              ), and cells (
-              <code>&lt;td&gt;</code>
-              and <code>&lt;th&gt;</code>
-              ).
-            </p>
-
-          </td>
-        </tr>
-      </table>
-    </article>
-    <!--======================================================================================================-->
+    <!--=======================================================================================================-->
     <article>
       <h2 id="p_char_ref">Character references</h2>
-      <table class="p_table">
+      <table class="p-table">
         <caption>Special characters</caption>
         <thead>
           <tr>
@@ -431,7 +418,7 @@
         </tfoot>
       </table>
     </article>
-    <!--======================================================================================================-->
+    <!--=======================================================================================================-->
     <article>
       <h2 id="link_state">Styling Links: A Guide to CSS Pseudo-Classes</h2>
       <p>
@@ -459,8 +446,8 @@
           browser styling, these often turn red.
         </li>
       </ul>
+      <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
       <section>
-      <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
         <h3>The "LVFHA" Ordering Rule</h3>
         <p>Because later CSS rules can override earlier ones, you must define these in a specific order to ensure they
           work correctly. A common mnemonic for this is "LoVe Fears HAte":
@@ -483,7 +470,7 @@
         </p>
       </div>
     </article>
-    <!--======================================================================================================-->
+    <!--=======================================================================================================-->
     <article>
       <h2 id="struct_web_site">Structuring a basic website</h2>
       <p>An <a
@@ -492,22 +479,22 @@
           article on MDN</a> explores this.
       </p>
     </article>
-    <!--======================================================================================================-->
+    <!--=======================================================================================================-->
     <article>
       <h2 id="send_email">Send an email</h2>
-      <div class="d_email">
+      <p>
         <a
           href="mailto:patrick.pire@gmail.com?subject=Mail%20from%20my%20site&body=This%20is%20the%20body%20of%20this%20email">Send
           mail</a>
-      </div>
+      </p>
     </article>
-    <!--======================================================================================================-->
+    <!--=======================================================================================================-->
     <article>
       <h2 id="html_tables">Tables</h2>
+      <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
       <section>
-      <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
         <h3>Simple table</h3>
-        <table class="h_tab">
+        <table class="h-tab" id="tab-dogs">
           <tr>
             <td>&nbsp;</td>
             <th>Knocky</th>
@@ -538,17 +525,21 @@
           </tr>
           <tr>
             <th>Eating Habits</th>
-            <td>Eats everyone's leftovers</td>
-            <td>Nibbles at food</td>
-            <td>Hearty eater</td>
-            <td>Will eat till he explodes</td>
+            <td class="text-cell">Eats everyone's leftovers</td>
+            <td class="text-cell">Nibbles at food</td>
+            <td class="text-cell">Hearty eater</td>
+            <td class="text-cell">Will eat till he explodes</td>
           </tr>
         </table>
       </section>
+      <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
       <section>
-      <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
         <h3>Colspan and Rowspan</h3>
-        <table class="h_tab">
+        <table class="h-tab span-tab">
+          <colgroup>
+            <col>
+            <col>
+          </colgroup>
           <tr>
             <th colspan="2">Animals</th>
           </tr>
@@ -575,8 +566,8 @@
 
         </table>
       </section>
+      <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
       <section>
-      <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
         <h3>Planets</h3>
         <p>This section provides a more advanced example of html table.
           To go further, follow these links:
@@ -594,7 +585,7 @@
         </ul>
       </section>
     </article>
-    <!--======================================================================================================-->
+    <!--=======================================================================================================-->
     <article>
       <h2 id="forms">Forms</h2>
       <ul class="links">
@@ -602,214 +593,506 @@
         <li><a href="form2.html">Additional example</a></li>
       </ul>
     </article>
-    <!--======================================================================================================-->
+    <!--=======================================================================================================-->
     <article>
       <h2 id="css-selectors">CSS Selectors</h2>
+      <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
       <section>
-      <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
         <h3>Descendant combinator</h3>
-          <p><code>li em { color: rebeccapurple; }</code></p>
-          <p>This selector focuses on em elements that are found inside <code>li</code> elements</p>
+        <p><code>li em { color: rebeccapurple; }</code></p>
+        <p>This selector focuses on em elements that are found inside <code>li</code> elements</p>
       </section>
+      <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
       <section>
-      <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
         <h3>Next-sibling combinator</h3>
         <p><code>h1 + p { font-size: 200%; }</code></p>
         <p>Selects <code>p</code> elements that are found just after <code>h1</code> elements</p>
       </section>
+      <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
       <section>
-      <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
         <h3>Selectors based on state</h3>
         <p><code>a:link { color: pink; }</code></p>
         <p><code>a:visited { color: green; }</code></p>
         <p><code>a:hover { text-decoration: none; }</code></p>
         <P>The links will appear pink at start but green when visited.<br>
-           They will appear underlined but not when hovered.</P>
+          They will appear underlined but not when hovered.</P>
       </section>
+      <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
       <section>
-      <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
         <h3>Combined selectors</h3>
-        <p class="option" style="width: fit-content;">h1 + p .special {<br>
+        <p class="option">h1 + p .special {<br>
           &nbsp;&nbsp;color: navy;<br>
           &nbsp;&nbsp;border-radius: 3px;<br>
           &nbsp;&nbsp;border: 1px solid navy;<br>
           &nbsp;&nbsp;}
         </p>
         <p>The style is applied to elements with <code>special</code> class found inside <code>p</code>
-           elements that immediately follow an <code>h1</code> heading.</p>
-           <p class="note"><strong>Note: </strong>Not to be confused with <code>h1 + p.special {}</code> which targets paragraphs marked by the
-            class <code>special</code> and which directly follow a <code>h1</code> element. Just one space
+          elements that immediately follow an <code>h1</code> heading.</p>
+        <p class="note"><strong>Note: </strong>Not to be confused with <code>h1 + p.special {}</code> which targets
+          paragraphs marked by the
+          class <code>special</code> and which directly follow a <code>h1</code> element. Just one space
           making all the difference!</p>
       </section>
     </article>
-    <!--======================================================================================================-->
+    <!--=======================================================================================================-->
     <article>
       <h2 id="css-box">The box model</h2>
       <p>Any html element behave like a box.
-    
+
       <p>It is important to understand this behaviour,
         especially later when dealing with more complex
         layouts like CSS grid or flexbox.</p>
-      <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-      <h3>Block and inline boxes</h3>
-      <p>The boxes in which most HTML elements reside can be either block boxes or inline boxes</p>
-      <p>Block Boxes follow all box model rules. They stack vertically
-        and respect every dimension or margin you set.</p>
-      <p>Inline Boxes only respect horizontal properties (left/right margin
-        and padding). They effectively ignore width, height, and any
-        vertical margin.</p>
-      <p>The "Middle Ground": If you want an element to stay in a line of
-        text but still respect width, height, and vertical padding/margin,
-        you can use display: inline-block.</p>
-      <p class="note">Example of a paragraph with an <span style="padding: 20px; background-color: bisque;">inline
-          span</span>
-        defining a background color and a vertical padding.</p>
-      <p class="note">Same example but with the <span
-          style="display: inline-block; padding: 20px; background-color: bisque;">
-          span</span> defined as display:inline-block</p>
-      <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-      <h3>Inner and outer display types</h3>
-      <p>In modern CSS, the display property is technically a multi-keyword property that defines two distinct
-        behaviors at once: how a box acts toward its neighbors (outer) and how it organizes its children (inner).
-      </p>
-      <p>The outer display type determines how the element participates in the page's "Normal Flow" 
-        (how it sits next to other boxes).</p>
-      <p>The inner display type defines the formatting context created inside the box for its direct children.</p>
-      <p>Changing the display property determines the way an element behaves along its neighborhood as well as
-        how its children behave in it as a container.</p>
+      <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+      <section>
+        <h3>Block and inline boxes</h3>
+        <p>The boxes in which most HTML elements reside can be either block boxes or inline boxes</p>
+        <p>Block Boxes follow all box model rules. They stack vertically
+          and respect every dimension or margin you set.</p>
+        <p>Inline Boxes only respect horizontal properties (left/right margin
+          and padding). They effectively ignore width, height, and any
+          vertical margin.</p>
+        <p>The "Middle Ground": If you want an element to stay in a line of
+          text but still respect width, height, and vertical padding/margin,
+          you can use display: inline-block.</p>
+        <p class="note">Example of a paragraph with an <span style="padding: 20px; background-color: bisque;">inline
+            span</span>
+          defining a background color and a vertical padding.</p>
+        <p class="note">Same example but with the <span
+            style="display: inline-block; padding: 20px; background-color: bisque;">
+            span</span> defined as display:inline-block</p>
+      </section>
+      <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+      <section>
+        <h3>Inner and outer display types</h3>
+        <p>In modern CSS, the display property is technically a multi-keyword property that defines two distinct
+          behaviors at once: how a box acts toward its neighbors (outer) and how it organizes its children (inner).
+        </p>
+        <p>The outer display type determines how the element participates in the page's "Normal Flow"
+          (how it sits next to other boxes).</p>
+        <p>The inner display type defines the formatting context created inside the box for its direct children.</p>
+        <p>Changing the display property determines the way an element behaves along its neighborhood as well as
+          how its children behave in it as a container.</p>
+      </section>
     </article>
-    <!--======================================================================================================-->
+    <!--=======================================================================================================-->
     <article>
-    <h2 id="cascade" >About cascading and inheritance</h2>
+      <h2 id="cascade">About cascading and inheritance</h2>
       <p>In CSS, the "cascade" refers to the specific algorithm the browser uses to resolve conflicts when multiple
         styles apply to the same HTML element. It determines which rule "wins" and which property values are
         ultimately applied.</p>
       <p>The browser follows a predictable hierarchy, often compared to a waterfall where styles "flow" down through
         several levels of priority.</p>
-      <h3>The Core Cascading Factors</h3>
-      <p>When two or more rules conflict, the browser checks these criteria in order:</p>
-      <ul>
-        <li><strong>Importance & Origin</strong>: The browser first considers where the style comes from. For example, a developer's stylesheet (Author origin) overrides the browser's default styles (User-Agent origin). Rules marked with !important jump to the top of this priority list.</li>
-        <li><strong>Specificity</strong>: If the origins are equal, the more targeted selector wins. For instance, a rule using an ID selector (#header) is more specific and will override a class selector (.header) or a tag selector (h1).</li>
-        <li><strong>Source Order</strong>: If importance and specificity are identical, the last rule the browser encounters in the code "wins". Newer styles effectively overwrite previous ones.</li>
-        <li><strong>Cascade Layers</strong>: Modern CSS allows developers to group styles into explicit layers using @layer. Styles in a layer defined later have higher priority regardless of their internal specificity.</li>
-      </ul>
-      <h3>Distinction from Inheritance</h3>
-      <p>While often discussed together, cascading is different from inheritance.</p>
-      <ul>
-        <li>Cascading is about resolving conflicts between different rules targeting the same element.</li>
-        <li>Inheritance is the process by which an element automatically receives certain properties (like color or font-family) from its parent element.</li>
-      </ul>
-      <p class="note"><strong>Note</strong>: In fact, instead of seeing CSS cascading as a conflict solving system (among all those possible property values, which one shall I choose?)
-        one could also see it as an algorithm that always determine the most appropriate value, the most targeted one. Instead of a conflict, it becomes a
-        general to specific approach. Seeing it so makes it probably easier to understand how CSS works, all along.</p>
+      <section>
+        <h3>The Core Cascading Factors</h3>
+        <p>When two or more rules conflict, the browser checks these criteria in order:</p>
+        <ul>
+          <li><strong>Importance & Origin</strong>: The browser first considers where the style comes from. For example,
+            a
+            developer's stylesheet (Author origin) overrides the browser's default styles (User-Agent origin). Rules
+            marked with !important jump to the top of this priority list.</li>
+          <li><strong>Specificity</strong>: If the origins are equal, the more targeted selector wins. For instance, a
+            rule using an ID selector (#header) is more specific and will override a class selector (.header) or a tag
+            selector (h1).</li>
+          <li><strong>Source Order</strong>: If importance and specificity are identical, the last rule the browser
+            encounters in the code "wins". Newer styles effectively overwrite previous ones.</li>
+          <li><strong>Cascade Layers</strong>: Modern CSS allows developers to group styles into explicit layers using
+            @layer. Styles in a layer defined later have higher priority regardless of their internal specificity.</li>
+        </ul>
+      </section>
+      <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+      <section>
+        <h3>Distinction from Inheritance</h3>
+        <p>While often discussed together, cascading is different from inheritance.</p>
+        <ul>
+          <li>Cascading is about resolving conflicts between different rules targeting the same element.</li>
+          <li>Inheritance is the process by which an element automatically receives certain properties (like color or
+            font-family) from its parent element.</li>
+        </ul>
+        <p class="note"><strong>Note</strong>: In fact, instead of seeing CSS cascading as a conflict solving system
+          (among all those possible property values, which one shall I choose?)
+          one could also see it as an algorithm that always determine the most appropriate value, the most targeted one.
+          Instead of a conflict, it becomes a
+          general to specific approach. Seeing it so makes it probably easier to understand how CSS works, all along.
+        </p>
+      </section>
     </article>
-    <!--======================================================================================================-->
+    <!--=======================================================================================================-->
     <article>
       <h2 id="alt-box">The alternative CSS box model</h2>
-      <h3>Historical context</h3>
-      <p>The original CSS box model (content-box) was defined in the early days of the web, when CSS was mainly used for text styling rather than layout.
-      
-      <p>In this model:</p>
-      <ul>
-        <li>width and height apply only to the content</li>
-        <li>padding and border are added on top</li>
-      </ul>
-      <p>As web design evolved toward more complex layouts,
-         this behavior proved counterintuitive.</p>
-      
-      <p>To address this, CSS introduced an alternative:</p>
-      
-      <p>👉 <code>box-sizing: border-box</code></p>
-      
-      <p>This model aligns better with how developers naturally
-         think about element size.</p>
+      <section>
+        <h3>Historical context</h3>
+        <p>The original CSS box model (content-box) was defined in the early days of the web, when CSS was mainly used
+          for
+          text styling rather than layout.
 
-      <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-      <h3>MDN recommended syntax</h3>
-        <p class="option" style="width: fit-content;">
+        <p>In this model:</p>
+        <ul>
+          <li>width and height apply only to the content</li>
+          <li>padding and border are added on top</li>
+        </ul>
+        <p>As web design evolved toward more complex layouts,
+          this behavior proved counterintuitive.</p>
+
+        <p>To address this, CSS introduced an alternative:</p>
+
+        <p>👉 <code>box-sizing: border-box</code></p>
+
+        <p>This model aligns better with how developers naturally
+          think about element size.</p>
+      </section>
+      <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+      <section>
+        <h3>MDN recommended syntax</h3>
+        <p class="code-block">
           <strong>html</strong> {<br>
           &nbsp;&nbsp;box-sizing: <span>border-box</span>;<br>
-        }<br>
-        <br>
-        <strong>*</strong>,<br>
-        <strong>*::<span>before</span></strong>,<br>
-        <strong>*::<span>after</span></strong> {<br>
+          }<br>
+          <br>
+          <strong>*</strong>,<br>
+          <strong>*::<span>before</span></strong>,<br>
+          <strong>*::<span>after</span></strong> {<br>
           &nbsp;&nbsp;box-sizing: <span>inherit</span>;<br>
-        }
+          }
         </p>
-      <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-      <h3>What the alternative model does</h3>
-      <p>With:</p>
-      
-      <p><code>box-sizing: border-box;</code></p>
-      
-      <p>The declared width/height becomes the total size of
-      the element, including:</p>
-      <ul>
-        <li>content</li>
-        <li>padding</li>
-        <li>border</li>
-      </ul>
-      <p>So:</p>
-      <ul>
-        <li>Final width = declared width</li>
-        <li>Content shrinks to fit inside</li>
-      </ul>
-      
-      <p>Result:</p>
-      <p class="note">
-        The size you set is the size you get.</p>      
-      <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-      <h3>Why use the alternative model</h3>
-      <p>
+      </section>
+      <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+      <section>
+        <h3>What the alternative model does</h3>
+        <p>With:</p>
+
+        <p><code>box-sizing: border-box;</code></p>
+
+        <p>The declared width/height becomes the total size of
+          the element, including:</p>
         <ul>
-          <li>Predictability: avoids unexpected overflow due to
-            padding/borders</li>
-          <li>Simplicity: easier mental model for layout</li>
-          <li>Consistency: widely used in modern development and
-            frameworks</li>
+          <li>content</li>
+          <li>padding</li>
+          <li>border</li>
         </ul>
-      </p>
-      <p>👉 It matches intuitive thinking:</p>
-      
-      <p class="note">“I define the final size of the element.”</p>
-      <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-      <h3>Why use the MDN pattern</h3>
-      <p>
-        While slightly more complex, instead of forcing <code>border-box</code> everywhere directly, the MDN approach
-      </p>
-      <ul>
-        <li>sets it once on <code>html</code> and</li>
-        <li>makes all elements <strong>inherit</strong>.</li>
-      </ul>
-      <p><strong>Advantages</strong>:</p>
-      <ul>
-        <li>Single source of truth<br>
+        <p>So:</p>
+        <ul>
+          <li>Final width = declared width</li>
+          <li>Content shrinks to fit inside</li>
+        </ul>
+
+        <p>Result:</p>
+        <p class="note">
+          The size you set is the size you get.</p>
+      </section>
+      <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+      <section>
+        <h3>Why use the alternative model</h3>
+        <div>
+          <ul>
+            <li>Predictability: avoids unexpected overflow due to
+              padding/borders</li>
+            <li>Simplicity: easier mental model for layout</li>
+            <li>Consistency: widely used in modern development and
+              frameworks</li>
+          </ul>
+        </div>
+        <p>👉 It matches intuitive thinking:</p>
+
+        <p class="note">“I define the final size of the element.”</p>
+      </section>
+      <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+      <section>
+        <h3>Why use the MDN pattern</h3>
+        <p>
+          While slightly more complex, instead of forcing <code>border-box</code> everywhere directly, the MDN approach
+        </p>
+        <ul>
+          <li>sets it once on <code>html</code> and</li>
+          <li>makes all elements <strong>inherit</strong>.</li>
+        </ul>
+        <p><strong>Advantages</strong>:</p>
+        <ul>
+          <li>Single source of truth<br>
             &nbsp;&nbsp;→ behavior is defined at the root
-        </li>
-        <li>Flexibility<br>
+          </li>
+          <li>Flexibility<br>
             &nbsp;&nbsp;→ easy to switch a section back
             to <code>content-box</code>
-            <p class="option" style="width: fit-content;">
+            <p class="code-block">
               .component {<br>
-                &nbsp;&nbsp;box-sizing: <span>content-box</span>;<br>
+              &nbsp;&nbsp;box-sizing: <span>content-box</span>;<br>
               }
             </p>
-        </li>
-        <li>Better maintainability<br>
-          &nbsp;&nbsp;→ avoids heavy overrides in complex projects
-        </li>
-        <li>Consistency for pseudo-elements<br>
-          &nbsp;&nbsp;→ <code>::before</code> and <code>::after</code> behave the same way
-        </li>
-      </ul>
-      <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-      <h3>Key takeaway</h3>
-      <p style="margin-top: -15px; font-size: 85%;"><em>One-line memory</em></p>
-      <p class="note">Use <code>border-box</code> so the size you set is the size you get.</p>
+          </li>
+          <li>Better maintainability<br>
+            &nbsp;&nbsp;→ avoids heavy overrides in complex projects
+          </li>
+          <li>Consistency for pseudo-elements<br>
+            &nbsp;&nbsp;→ <code>::before</code> and <code>::after</code> behave the same way
+          </li>
+        </ul>
+      </section>
+      <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+      <section>
+        <h3>Key takeaway</h3>
+        <p style="margin-top: -15px; font-size: 85%;"><em>One-line memory</em></p>
+        <p class="note">Use <code>border-box</code> so the size you set is the size you get.</p>
+      </section>
     </article>
+    <!--=======================================================================================================-->
+    <article>
+      <h2 id="form-inherit">Normalizing form behavior</h2>
+      <p>This 'form reset' code from MDN helps prepare a clean ground for styling forms across different
+        browsers.</p>
+      <p class="code-block">
+        button,<br>
+        input,<br>
+        select,<br>
+        textarea {<br>
+        &nbsp;&nbsp;font-family: inherit;<br>
+        &nbsp;&nbsp;font-size: 100%;<br>
+        &nbsp;&nbsp;box-sizing: border-box;<br>
+        &nbsp;&nbsp;padding: 0;<br>
+        &nbsp;&nbsp;margin: 0;<br>
+        }<br>
+        <br>
+        textarea {<br>
+        &nbsp;&nbsp;overflow: auto;<br>
+        }
+      </p>
+      <p class="note"><strong>Note: </strong>If you already applied the box-sizing reset code, the corresponding line
+        can be removed in the code above.</p>
+    </article>
+    <!--=======================================================================================================-->
+    <article>
+      <h2 id="adv-styling">Advanced styling</h2>
+      <section>
+        <h3>Box shadows</h3>
+        <div id="as-shadow">
+          <div class="simple">
+            <p>
+              <strong>Warning</strong>: The thermostat on the cosmic transcender has
+              reached a critical level.
+            </p>
+          </div>
+        </div>
+      </section>
+      <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+      <section>
+        <h3>Flame-effect shadow</h3>
+        <p class="flame-big flame-shadow">Flame Shadow</p>
+      </section>
+    </article>
+    <!--=======================================================================================================-->
+    <article>
+      <h2 id="css-tidy">Tips to keep your CSS tidy</h2>
+      <ul>
+        <li>Consistency is a must-have to ensure easy code maintenance.</li>
+        <li>Adopt a naming convention</li>
+        <li>Follow the "Single Responsibility" Principle</li>
+        <li>Keep Specificity Low</li>
+        <li>Use Modern Layout Engines (Grid & Flexbox)</li>
+        <li>Documentation & Styleguides</li>
+        <li>Master the "Cascade" (Don't Fight It)</li>
+        <li>Mobile-First Development</li>
+      </ul>
+    </article>
+    <!--=======================================================================================================-->
+    <article>
+      <h2 id="css-layout">CSS Layout</h2>
+      <section>
+        <h3>Floats</h3>
+        <p><strong>Example</strong></p>
+        <div class="css-float">Float</div>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla luctus aliquam
+          dolor, eu lacinia lorem placerat vulputate. Duis felis orci, pulvinar id metus
+          ut, rutrum luctus orci. Cras porttitor imperdiet nunc, at ultricies tellus
+          laoreet sit amet.
+        </p>
 
+        <p>
+          Sed auctor cursus massa at porta. Integer ligula ipsum, tristique sit amet
+          orci vel, viverra egestas ligula. Curabitur vehicula tellus neque, ac ornare
+          ex malesuada et. In vitae convallis lacus. Aliquam erat volutpat. Suspendisse
+          ac imperdiet turpis. Aenean finibus sollicitudin eros pharetra congue. Duis
+          ornare egestas augue ut luctus. Proin blandit quam nec lacus varius commodo et
+          a urna. Ut id ornare felis, eget fermentum sapien.
+        </p>
+
+        <p><strong>About the nature of float</strong></p>
+        <p>A floated element is removed from the normal layout flow. While subsequent block-level elements occupy their
+          normal positions as if the float weren't there, their internal line boxes (the invisible horizontal strips
+          that
+          wrap each row of content) are shortened to prevent their inline content—like text or images—from colliding
+          with
+          the float.
+        </p>
+        <p><strong>Conversation with Gemini</strong></p>
+        <p class="date-ref">20260404</p>
+        <div class="question">
+          <p>
+            Its a bit like the float element was glued upon the other elements and in addition acted as a
+            magnet upon certain rendered contents, like text ?
+          </p>
+        </div>
+        <div class="answer">
+          <p>That is a fantastic way to visualize it. You’ve hit on the "magic" of floats.</p>
+          <p>To use your analogy:</p>
+          <ul>
+            <li>The Glue: The floated element is "glued" on top of the normal layout. Because it is pulled out of the
+              standard
+              flow, the paragraph's block box doesn't even see it—it just slides right under the float as if it weren't
+              there.
+            </li>
+            <li>The Magnet: The float then acts like a magnetic field that only affects inline content (text and line
+              boxes).
+              As the line boxes try to render, they "feel" the magnet and are pushed away, shortening themselves to
+              avoid
+              a
+              collision.
+            </li>
+          </ul>
+          <p>This is exactly why you can have a paragraph with a background color that sits behind an image, while the
+            text
+            itself neatly wraps around it. The "container" ignores the glue, but the "content" reacts to the magnet.
+          </p>
+          <p>The only way to make the paragraph box "stop" being ignored by the glue is to create a Block Formatting
+            Context
+            (BFC), which essentially tells the paragraph: "Don't slide under that float; respect its boundaries as a
+            whole
+            box."
+          </p>
+        </div>
+      </section>
+      <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+      <section>
+        <h3>Positioning</h3>
+        <p>
+          The <code>position</code> property defines the coordinate system of an element, determining how it sits in the
+          page
+          layout or if it "breaks out" of it entirely. It allows you to move elements to specific locations using top,
+          bottom, left, and right relative to their parent, the viewport, or their own original spot.
+        </p>
+        <p>To dive into this, have a look at
+          <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Positioning">
+            "CSS Layout - Positioning"</a>,
+          from MDN documentation.
+        </p>
+      </section>
+      <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+      <section>
+        <h3>Flexbox</h3>
+        <p>Flexbox is a one-dimensional layout method for arranging items in rows or columns. Items flex (expand) to
+          fill additional space or shrink to fit into smaller spaces. <span style="font-size: 0.7em;">(source:
+            MDN)</span>
+        </p>
+        <h4>The flex model</h4>
+        <figure>
+          <img src="images/flex-model.png" alt="The flex model" width="563" height="333">
+          <figcaption>Source: MDN</figcaption>
+        </figure>
+        <h4>CSS Flexbox by CSS-Tricks</h4>
+        <img src="images/css-flexbox-poster.png" alt="CSS Flexbox poster" width="900" height="1350">
+        <h4>To go further</h4>
+        <p><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank">
+          CSS Flexbox Layout Guide</a>, by CSS-Tricks</p>
+        <p>And this <a href="https://www.joshwcomeau.com/css/interactive-guide-to-flexbox/" target="_blank">
+          excellent guide</a> by Josh Comeau</p>
+        <h4>Flexbox container and items properties</h4>
+        <p><strong>Container</strong></p>
+        <table class="h-tab tab-2-8">
+          <tr>
+            <th>display</th>
+            <td>This is the start point to create a flex container for all its direct children.<br>
+              <code>flex</code>, <code>inline-flex</code>
+            </td>
+          </tr>
+          <tr>
+            <th>flex-direction</th>
+            <td>Specifies whether the main axis is horizontal or vertical.<br>
+              <code>row</code>, <code>row-reverse</code>, <code>column</code>, <code>column-reverse</code></td>
+          </tr>
+          <tr>
+            <th>flex-wrap</th>
+            <td>Defines whether flex items are forced into a single line or can wrap onto multiple lines if they
+              exceed the container's space.<br>
+              <code>no-wrap</code>, <code>wrap</code>, <code>wrap-reverse</code></td>
+          </tr>
+          <tr>
+            <th>flex-flow</th>
+            <td>A shorthand for <code>flex-direction</code> and <code>flex-wrap</code>.<br>
+              Example: <code>flex-flow: row wrap;</code></td>
+          </tr>
+          <tr>
+            <th>justify-content</th>
+            <td>Children distribution along the primary axis.<br>
+              <code>flex-start</code>, <code>flex-end</code>, <code>center</code>, <code>space-between</code>,
+              <code>space-around</code>, <code>space-evenly</code></td>
+          </tr>
+          <tr>
+            <th>align-items</th>
+            <td>Sets the default alignment for all items along the cross axis, determining how they are positioned
+              within their current line.<br>
+              <code>stretch</code>, <code>flex-start</code>, <code>flex-end</code>, <code>center</code>,
+              <code>baseline</code></td>
+          </tr>
+          <tr>
+            <th>align-content</th>
+            <td>Used when wrap is enabled. While justify-content aligns individual items along the main axis,
+              align-content aligns the rows (or columns) themselves when they wrap.<br>
+              <code>flex-start</code>, <code>flex-end</code>, <code>center</code>, <code>stretch</code>,
+              <code>space-between</code>, <code>space-around</code>, <code>space-evenly</code>
+            </td>
+          </tr>
+          <tr>
+            <th>gap, row-gap, column-gap</th>
+            <td>Acts like in grid and multi-column layouts. gap is the shorthand</td>
+          </tr>
+        </table>
+        <br>
+        <p><strong>Item</strong></p>
+        <table class="h-tab tab-2-8">
+          <tr>
+            <th>order</th>
+            <td>default is zero. To change the order flex-items appear in their container.</td>
+          </tr>
+          <tr>
+            <th>flex-grow</th>
+            <td>default is zero. Represents the proportion by which an item can grow with regard to the others.</td>
+          </tr>
+          <tr>
+            <th>flex-shrink</th>
+            <td>default is one. Along with flex-basis, it represents the proportion by which an item can shrink with
+              regard to the others. Mainly, there is no need to fine-tune this property. The most common use is to set
+              some items to flex-shrink: 0, whom we need their size not to be changed;</td>
+          </tr>
+          <tr>
+            <th>flex-basis</th>
+            <td>default size of an element before the remaining space is distributed</td>
+          </tr>
+          <tr>
+            <th>flex</th>
+            <td>shorthand for flex-grow, flex-shrink and flex-basis</td>
+          </tr>
+          <tr>
+            <th>align-self</th>
+            <td>Same effect as align-items: it changes the alignment along the cross axis, but for a single item at once
+              (independently of its siblings).<br>
+              <code>auto</code>, <code>flex-start</code>, <code>flex-end</code>, <code>center</code>, <code>baseline</code>, <code>stretch</code>
+            </td>
+          </tr>
+        </table>
+        <h4>Flexbox examples</h4>
+        <ul class="links shiftl-25">
+          <li>
+            <a href="Flexbox/Threecols.html">Three columns</a>
+          </li>
+          <li>
+            <a href="Flexbox/Menu.html">Menu</a>
+          </li>
+          <li>
+            <a href="Flexbox/Stickyfooter.html">Sticky footer</a>
+          </li>
+        </ul>
+      </section>
+    </article>
+    <!--=======================================================================================================-->
   </main>
 </body>
 

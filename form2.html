@@ -21,7 +21,7 @@
   <br>
   <article>
     <form action="./submit" method="get">
-      <div class="form-container">
+      <div class="flex-row left-15">
         <label for="userid">User ID</label>
         <input type="text" id="userid" name="userid" class="small-input">
         <label for="passw">Password</label>
@@ -29,9 +29,9 @@
         <button>Log in</button>
       </div>
       <br>
-      <div class="form-container">
-        <fieldset class="fs-300">
-          <legend>Who is your favourite poney</legend>
+      <div class="two-cols cont-620">
+        <fieldset>
+          <legend>Your favourite poney</legend>
           <div>
             <input type="radio" id="Pinkie" name="poney" value="Pinkie Pie" checked>
             <label for="Pinkie">Pinkie Pie</label>
@@ -43,8 +43,7 @@
             <label for="Twilight">Twilight Sparkle</label>
           </div>
         </fieldset>
-        <br>
-        <fieldset class="fs-300">
+        <fieldset>
           <legend>Hotdog preferences</legend>
           <div>
             <input type="checkbox" id="Vegan" name="Vegan">
@@ -66,17 +65,28 @@
   </article>
   <article>
     <h2>Enter your support query</h2>
-    <div class="form-container">
+    <div class="two-cols left-15">
+      <div>
       <label for="uname">User name:</label>
-      <input type="text" name="uname" id="uname" class="medium-input" minlength="5" maxlength="20">
+      <input type="text" name="uname" id="uname" minlength="5" maxlength="20">
+      </div>
+      <div>
       <label for="email">Email address:</label>
-      <input type="email" name="email" id="email" class="medium-input" required>
+      <input type="email" name="email" id="email" required>
+      </div>
+    </div>
+      <br>
+    <div class="two-cols left-15">
+      <div>
       <label for="phone">Phone number:</label>
       <input type="tel" name="phone" id="phone" class="medium-input" maxlength="15" required>
+      </div>
+      <div>
       <label for="comment">Comment:</label>
-      <textarea name="comment" id="comment" maxlength="200"> </textarea>
-      <button>Submit comment</button>
+      <textarea name="comment" id="comment" maxlength="200" rows="5" cols="10"> </textarea>
+      </div>
     </div>
+      <button class="left-15">Submit comment</button>
   </article>
   </form>
 </body>

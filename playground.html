@@ -11,13 +11,49 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
-
+  <style>
+  </style>
 </head>
 
 <body>
-  <nav>
     <h1>Playground</h1>
-  </nav>
+    <div id="checklist-container">
+      <div>
+        <input type="checkbox" value="Buy groceries">
+        <span>Buy groceries</span>
+      </div>
+      <div>
+        <input type="checkbox" value="Call the bank">
+        <span>Call the bank</span>
+      </div>
+      <div>
+        <input type="checkbox" value="Walk the dog">
+        <span>Walk the dog</span>
+      </div>
+    </div>
+    <button id="copyBtn">Copy Checked Items</button>
 </body>
+<script>
+  document.getElementById('copyBtn').addEventListener('click', async () => {
+    // 1. Grab all checked checkboxes
+    const checkedBoxes = document.querySelectorAll('input[type="checkbox"]:checked');
 
+    // 2. Map directly to the 'value' property
+    const listText = Array.from(checkedBoxes)
+      .map(checkbox => checkbox.value)
+      .join('\n');
+
+    if (!listText) {
+      alert("Please select at least one item.");
+      return;
+    }
+
+    try {
+      await navigator.clipboard.writeText(listText);
+      console.log("Copied to clipboard!");
+    } catch (err) {
+      console.error('Error copying text: ', err);
+    }
+  });
+</script>
 </html>

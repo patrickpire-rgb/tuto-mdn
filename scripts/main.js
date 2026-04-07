@@ -25,7 +25,13 @@ listItems.forEach((item) => {
 // --- Change elements attributes at run time as a response to a click event
 
 const label = document.getElementById("p_css");
-label.addEventListener("click", () => { label.style.color = "blue"; });
+label.addEventListener("click", () => {
+    if(label.style.color === "blue") {
+        label.style.color = "red";
+    } else {
+        label.style.color = "blue";
+    }
+});
 
 const image = document.getElementById("img_boxm");
 image.addEventListener("click", () => {

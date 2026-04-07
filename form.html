@@ -21,49 +21,53 @@
     <article>
         <form action="./payment_page" method="get">
             <h2>Register for the meetup</h2>
-            <fieldset class="fs-300">
-                <legend>Choose hotel room type:</legend>
-                <div>
-                    <input type="radio" id="hotelChoice1" name="hotel" value="economy">
-                    <label for="hotelChoice1">Economy (+$0)</label>
-                    <br>
-                    <input type="radio" id="hotelChoice2" name="hotel" value="superior">
-                    <label for="hotelChoice2">Superior (+$50)</label>
-                    <br>
-                    <input type="radio" id="hotelChoice3" name="hotel" value="penthouse" disabled>
-                    <label for="hotelChoice3">Penthouse (+$150)</label>
-                </div>
-            </fieldset>
-            <br>
-            <fieldset class="fs-300">
-                <legend>Choose classes to attend:</legend>
-                <div>
-                    <input type="checkbox" id="yoga" name="yoga">
-                    <label for="yoga">Yoga (+$10)</label>
-                    <br>
-                    <input type="checkbox" id="coffee" name="coffee">
-                    <label for="coffee">Coffee roasting (+$20)</label>
-                    <br>
-    
-                    <input type="checkbox" id="balloon" name="balloon">
-                    <label for="balloon">Balloon animal art (+$5)</label>
-                </div>
-            </fieldset>
-            <br>
-            <div class="form-container">
-                <label for="transport">How are you getting here:</label>
-                <select class="medium-input" name="transport" id="transport">
-                    <option value="">--Please choose an option--</option>
-                    <option value="plane">Plane</option>
-                    <option value="bike">Bike</option>
-                    <option value="walk">Walk</option>
-                    <option value="bus">Bus</option>
-                    <option value="train">Train</option>
-                    <option value="jetPack">Jet pack</option>
-                </select>
-                <br>
-                <label for="comments">Any other comments:</label>
-                <textarea class="medium-input" id="comments" name="comments" rows="5" cols="33"></textarea>
+            <div class="two-cols cont-620">
+                <fieldset>
+                    <legend>Choose hotel room type:</legend>
+                    <div>
+                        <input type="radio" id="hotelChoice1" name="hotel" value="economy">
+                        <label for="hotelChoice1">Economy (+$0)</label>
+                        <br>
+                        <input type="radio" id="hotelChoice2" name="hotel" value="superior">
+                        <label for="hotelChoice2">Superior (+$50)</label>
+                        <br>
+                        <input type="radio" id="hotelChoice3" name="hotel" value="penthouse" disabled>
+                        <label for="hotelChoice3">Penthouse (+$150)</label>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Choose classes to attend:</legend>
+                    <div>
+                        <input type="checkbox" id="yoga" name="yoga">
+                        <label for="yoga">Yoga (+$10)</label>
+                        <br>
+                        <input type="checkbox" id="coffee" name="coffee">
+                        <label for="coffee">Coffee roasting (+$20)</label>
+                        <br>
+        
+                        <input type="checkbox" id="balloon" name="balloon">
+                        <label for="balloon">Balloon animal art (+$5)</label>
+                    </div>
+                </fieldset>
+            </div>
+            <br><br>
+            <div class="two-cols cont-620">
+                <fieldset>
+                    <legend>How are you getting here:</legend>
+                    <select name="transport" id="transport">
+                        <option value="">--Please choose an option--</option>
+                        <option value="plane">Plane</option>
+                        <option value="bike">Bike</option>
+                        <option value="walk">Walk</option>
+                        <option value="bus">Bus</option>
+                        <option value="train">Train</option>
+                        <option value="jetPack">Jet pack</option>
+                    </select>
+                </fieldset>
+                <fieldset>
+                    <legend>Any other comments:</legend>
+                    <textarea id="comments" name="comments" rows="4"></textarea>
+                </fieldset>
             </div>
             <br>
             <p>
