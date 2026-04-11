@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    /* --- Default styling ------------------------------------------------------------------- */
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #f4f4f4;
+      color: #222;
+    }
+    .page {
+      width: min(1600px, 90%);
+      margin: 10px auto;
+    }
+    h1 {
+      margin-bottom: 24px;
+      text-align: center;
+    }
+    /* --- Flex container -------------------------------------------------------------------- */
+    .card-container {
+      display: flex;
+      justify-content: flex-start;
+      flex-flow: row wrap;
+      gap: 12px;
+    }
+    .card {
+      flex: 0 1 300px;
+      min-width: min(280px, 100%);
+      max-width: 320px;
+      background-color: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 4px 4px 8px rgb(103, 102, 102);
+
+      display: flex;
+      flex-flow: column nowrap;
+    }
+    .card img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 9; /*height: 200px;*/
+      object-fit: cover;
+    }
+    .card-content {
+      flex: 1;
+      padding: 20px;
+
+      display: flex;
+      flex-flow: column nowrap;
+    }
+    .card-content h2 {
+      margin-top: 0;
+      margin-bottom: 12px;
+      font-size: 1.3rem;
+    }
+    .card-content p {
+      margin-top: 0;
+      margin-bottom: 24px;
+      line-height: 1.5;
+    }
+    .card-button {
+      margin-top: auto;
+      align-self: flex-start;
+      text-decoration: none;
+      background-color: #222;
+      color: white;
+      padding: 10px 16px;
+      border-radius: 6px;
+      box-shadow: 3px 3px 5px gray;
+    }
+  </style>
+  <title>Flexbox Card Grid</title>
+</head>
+<body>
+  <main class="page">
+    <h1>Flexbox Card Grid</h1>
+    <section class="card-container">
+      <article class="card">
+        <img src="Images/Ourte-Confl.jpg" alt="Random illustration">
+        <div class="card-content">
+          <h2>Mountain Escape</h2>
+          <p>
+            A peaceful place to disconnect, breathe deeply, and enjoy the silence of nature.
+          </p>
+          <a href="#" class="card-button">Read more</a>
+        </div>
+      </article>
+      <article class="card">
+        <img src="Images/Pont-Guill.jpg" alt="Random illustration">
+        <div class="card-content">
+          <h2>City Lights</h2>
+          <p>
+            Discover vibrant streets, hidden cafés, and the energy of urban life at night.
+          </p>
+          <a href="#" class="card-button">Read more</a>
+        </div>
+      </article>
+      <article class="card">
+        <img src="Images/Nassogne-Snow.jpg" alt="Random illustration">
+        <div class="card-content">
+          <h2>Forest Walk</h2>
+          <p>
+            A slow walk among the trees can calm the mind and sharpen attention.
+          </p>
+          <a href="#" class="card-button">Read more</a>
+        </div>
+      </article>
+      <article class="card">
+        <img src="Images/Minuit.jpg" alt="Random illustration">
+        <div class="card-content">
+          <h2>Ocean Horizon</h2>
+          <p>
+            Looking at the sea often gives a strange feeling of clarity and openness.
+          </p>
+          <a href="#" class="card-button">Read more</a>
+        </div>
+      </article>
+      <article class="card">
+        <img src="Images/Fraises.jpg" alt="Random illustration">
+        <div class="card-content">
+          <h2>Desert Shapes</h2>
+          <p>
+            Wind and time sculpt the landscape into elegant forms.
+          </p>
+          <a href="#" class="card-button">Read more</a>
+        </div>
+      </article>
+      <article class="card">
+        <img src="Images/Monkey.jpg" alt="Random illustration">
+        <div class="card-content">
+          <h2>Hidden Village</h2>
+          <p>
+            Somewhere between hills and fields, a quiet village preserves its rhythm,
+            its stories, and a slower sense of time.
+          </p>
+          <a href="#" class="card-button">Read more</a>
+        </div>
+      </article>
+    </section>
+  </main>
+</body>
+
+</html>
